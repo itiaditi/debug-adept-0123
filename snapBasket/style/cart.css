@@ -15,12 +15,11 @@ body{
     background-color: rgb(84,15,121);
     display: flex;
     justify-content: center;
-    /* align-items: center; */
   }
   #navCart p{
     color: white;
     font-family: "ZeptoNorms - 400";
-    margin-top: 20px;
+    margin-top: 25px;
   }
   #navCart img{
     margin-top: 20px;
