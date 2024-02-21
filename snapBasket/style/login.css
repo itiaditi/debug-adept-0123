@@ -1,0 +1,114 @@
+body {
+    font-size: 20px;
+  }
+  .profile-account {
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+  aside.accountLayoutAside {
+    background-color: #0c831f;
+    color: white;
+  }
+  .accountLayout {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .accountLeft {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .h3 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .h4 {
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+  }
+  .divider {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    height: 1px;
+    width: 100%;
+
+    background-color: white;
+  }
+  .accountLeftPartDetails {
+    margin-bottom: 12px;
+  }
+  .accountLeftPart {
+    height: 50px;
+    border-radius: 5px;
+  }
+  .accountLeftPart.active {
+    background-color: white;
+    color: #0c831f;
+  }
+
+  .accountLeftPart:hover {
+    background-color: white;
+    color: #0c831f;
+  }
+
+  .detail {
+    margin-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  @media (min-width: 1024px) {
+    .accountLayout {
+      margin-top: 0;
+    }
+    .accountLayoutMain {
+      /* width: 90%; */
+      display: flex;
+      height: 100%;
+      width: 100vw;
+      flex-direction: column;
+      border-radius: 0.5rem;
+      border: 1px solid black;
+    }
+  }
+  @media (min-width: 640px) {
+    .accountLayout {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .accountLayoutMain {
+      flex-direction: row;
+      border-width: 1px;
+    }
+    .accountLayoutAside {
+      display: flex;
+      min-height: 100%;
+      width: 33.333333%;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      --tw-bg-opacity: 1;
+      background-color: rgba(
+        var(--color-primary-darker),
+        var(--tw-bg-opacity)
+      );
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .accountLayoutMain {
+      width: 100%;
+    }
+  }
