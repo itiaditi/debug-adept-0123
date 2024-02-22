@@ -1,0 +1,124 @@
+.middle-container{
+    display: flex;
+}
+.coursel-image{
+    display: flex;
+    height: 400px;
+    width: 600px;
+    border: 1px solid #cecbcf;
+    border-radius: 5px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+.carousel{
+    height: 250px;
+    width: 250px;
+    
+}
+.description{
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.description>.cut-text{
+    text-decoration: line-through;
+    margin-left: 20px;
+    color: #cecbcf;
+}
+.description>.off{
+    height: 30px;
+    width: 100px;
+    background: linear-gradient(to bottom, #54B227, #153f01);
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 3px;
+    border-radius: 5px;
+    color: white;
+}
+.description>h6{
+    color: #89888a;
+}
+.description>button{
+    height: 50px;
+    width: 100px;
+    margin-top: 20px;
+    background-color: #FF3C69;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+hr{
+    border: 1px solid gray ;
+    width: 650px;
+    margin-top: 50px;
+}
+.description>a{
+    text-decoration: none;
+    color: black;
+}
+.description>.papaya{
+    color: gray ;
+}
+.box{
+    display: flex;
+    height: 80px;
+    width: 80px;
+    border: 1px solid #cecbcf;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box>img{
+    height: 50px;
+    width: 50px;
+    
+ 
+}
+.points{
+    display: flex;
+    
+    }
+
+.points>div>h5{
+    margin-left: 30px;
+    font-family: sans-serif;
+        font-style: normal;
+      
+}
+.points>div>p{
+    margin-left: 30px;
+    color: gray;
+    font-family: sans-serif;
+        font-style: normal;
+       
+}
+
+
+
+/* css for recommendations */
+    .might-like{
+        height: 400px;
+        width: auto;
+        background-color: #F7F6F7;
+        padding-left: 30px;
+        margin-top: 50px;
+        
+    }
+    .might-like>p{
+        padding-top: 20px;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        
+    }
+    .recommend{
+        display: flex;
+    }
+    
