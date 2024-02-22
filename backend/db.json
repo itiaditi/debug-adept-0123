@@ -1,9 +1,965 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+   "Fruits": [
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-2924-3000,pr-true,f-auto,q-80/cms/product_variant/4ef5b402-909c-4342-80bc-5049dc91f4d1.jpeg",
+        "productName": "Orange Kinnow Economy",
+        "quantity": "1 kg",
+        "offers": "19",
+        "price": "61",
+        "id": "1"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-804-748,pr-true,f-auto,q-80/inventory/product/93325143-6e7b-495f-b8c9-c0f395d59d00-baby_apple_shimla.PNG",
+        "productName": "Baby Apple Shimla",
+        "quantity": "1 kg (Approx. 9 - 12 pcs)",
+        "offers": "20",
+        "price": "192",
+        "id": "2"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/97e80b7f-49d1-451d-b9bd-e88f9ded7ce9.jpeg",
+        "productName": "Papaya Semi Ripe",
+        "quantity": "1 pc (Approx. 800g - 1.2 kg)",
+        "offers": "20",
+        "price": "78",
+        "id": "3"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/a38decd6-3f45-4d1c-8593-504e2faaf603.jpeg",
+        "productName": "Pomegranate",
+        "quantity": "4 pcs (Approx. 720g - 800g)",
+        "offers": "20",
+        "price": "154",
+        "id": "4"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-1000,pr-true,f-auto,q-80/cms/product_variant/20230412-1430091.jpeg",
+        "productName": "Guava Thai Premium",
+        "quantity": "",
+        "offers": "24",
+        "price": "106",
+        "id": "5"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/0e673bd2-2fe6-4d8e-899e-00b4d460a653-tmp/a87d6c85-8184-428d-a877-070f4f55ffb5.jpeg",
+        "productName": "Apple Shimla",
+        "quantity": "4 pcs (Approx. 640g - 720g)",
+        "offers": "20",
+        "price": "182",
+        "id": "6"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-300-300,pr-true,f-auto,q-80/inventory/product/8e122fbe-eeb9-42fb-b75f-6baf79b5f579-838e8799-b5c9-48cb-9d14-79ad5ff6bc39.jpeg",
+        "productName": "Orange Nagpur Regular",
+        "quantity": "1 kg",
+        "offers": "20",
+        "price": "99",
+        "id": "7"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/20903965-50c9-4b36-bb32-7ddd9175c15d-a81ee81b-14ca-470b-82a6-19a13eacf193.jpeg",
+        "productName": "Chikoo",
+        "quantity": "500 g",
+        "offers": "20",
+        "price": "55",
+        "id": "8"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-679-515,pr-true,f-auto,q-80/cms/product_variant/6df79a4f-e9bf-4c29-8e07-25dd6644837e.jpeg",
+        "productName": "Grapes Thompson Seedless",
+        "quantity": "500 g",
+        "offers": "20",
+        "price": "68",
+        "id": "9"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/7f8439ee-f664-4535-aea5-daf9bb9c2949.jpeg",
+        "productName": "Grapes Black Seedless",
+        "quantity": "500 g",
+        "offers": "20",
+        "price": "103",
+        "id": "10"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/fb65ab4a-23a2-4468-b7a2-756895f11e58-Photo.jpeg",
+        "productName": "Pomegranate Regular",
+        "quantity": "1 kg",
+        "offers": "20",
+        "price": "155",
+        "id": "11"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-225-225,pr-true,f-auto,q-80/inventory/product/e5acda9e-0063-49ad-9372-dab68667fa1b-download_(2).jpg",
+        "productName": "Apple Shimla",
+        "quantity": "1 kg (Approx. 6 - 7 pcs)",
+        "offers": "19",
+        "price": "249",
+        "id": "12"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8d7ce258-8e61-4fd6-8795-cfc159d8cf40.jpeg",
+        "productName": "Coconut",
+        "quantity": "1 pc (Approx. 450g - 500g)",
+        "offers": "22",
+        "price": "28",
+        "id": "13"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-2924-3000,pr-true,f-auto,q-80/cms/product_variant/e61f7851-af93-4c4c-8556-f5dd750cb120.jpeg",
+        "productName": "Orange Kinnow",
+        "quantity": "1-1.05 kg",
+        "offers": "20",
+        "price": "88",
+        "id": "14"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/8078ff10-9a0b-4320-911f-3658cae7cbba-Photo.jpeg",
+        "productName": "Avocado Indian Semi Ripe",
+        "quantity": "2 pcs (Approx. 400g - 600g)",
+        "offers": "19",
+        "price": "262",
+        "id": "15"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/9ad025ae-861a-4f73-a811-665998de2ca9.jpeg",
+        "productName": "Ber",
+        "quantity": "250 g",
+        "offers": "21",
+        "price": "29",
+        "id": "16"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/9ceff5de-b4b3-463a-bb60-a63622e31ca3.jpeg",
+        "productName": "Blueberry Imported",
+        "quantity": "1 pack (Approx. 120g - 130g)",
+        "offers": "20",
+        "price": "314",
+        "id": "17"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-1000,pr-true,f-auto,q-80/inventory/product/a583ef37-7673-4866-a7f9-35305a29ceec-/tmp/20230412-1430091.jpeg",
+        "productName": "Guava Thai Premium",
+        "quantity": "1 piece",
+        "offers": "21",
+        "price": "55",
+        "id": "18"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1024-1024,pr-true,f-auto,q-80/cms/product_variant/9feb93a4-b863-479d-b496-4ad3ebfe744d.jpg",
+        "productName": "Star Fruit",
+        "quantity": "250 g",
+        "offers": "20",
+        "price": "56",
+        "id": "19"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/75f1579f-4fc6-49b5-b38c-f25cb94facae.jpeg",
+        "productName": "Longan",
+        "quantity": "250 g",
+        "offers": "21",
+        "price": "131",
+        "id": "20"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/8979c942-5d2c-4d9f-a0d3-2a2e6677df8d-tmp/23351a4d-75e1-48bd-9656-d4947293681e.jpeg",
+        "productName": "Apple Kinnaur",
+        "quantity": "4 pcs (Approx. 550g - 650g)",
+        "offers": "19",
+        "price": "209",
+        "id": "21"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/f8de3007-38ed-422f-be4a-39418d33e5ae.jpeg",
+        "productName": "Guava Semi Ripe",
+        "quantity": "500 g",
+        "offers": "20",
+        "price": "67",
+        "id": "22"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/7ef301c3-7150-4afd-91c6-ceaa4a1da72a.jpeg",
+        "productName": "Khari Foods Very Bery Crunch Dried",
+        "quantity": "100 g",
+        "offers": "6",
+        "price": "163",
+        "id": "23"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-2924-3000,pr-true,f-auto,q-80/cms/product_variant/3292c9b5-fcee-4ee4-a371-8defda537a60.jpeg",
+        "productName": "Muskmelon Semi Ripe",
+        "quantity": "1 pc (Approx. 500g - 900g)",
+        "offers": "20",
+        "price": "99",
+        "id": "24"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/e128442e-ed6c-4710-96bf-69d57df51595-ecd35d64-1582-4d08-bd68-5f3a8900ac07.jpeg",
+        "productName": "Plum Imported",
+        "quantity": "250 g",
+        "offers": "20",
+        "price": "109",
+        "id": "25"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/44723407-083c-44a5-b6f5-1eadca64e7fd.jpeg",
+        "productName": "Apple Royal Gala",
+        "quantity": "4 pcs (Approx. 500g - 540g)",
+        "offers": "19",
+        "price": "215",
+        "id": "26"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/649fc4da-1ca0-414c-81ad-12ab13561570-dried-cranberry-whole-500x500.webp",
+        "productName": "Khari Foods Cranberry Dried",
+        "quantity": "100 g",
+        "offers": "",
+        "price": "149",
+        "id": "27"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-600-600,pr-true,f-auto,q-80/inventory/product/f5d748ad-317f-445a-a33d-86ed89010d93-tmp/4fa7bc1e-cb3b-4d44-9e5f-c262d9df7a45.jpeg",
+        "productName": "Sun Melon",
+        "quantity": "1 pc (Approx. 700g - 1.5 kg)",
+        "offers": "19",
+        "price": "115",
+        "id": "28"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-800-873,pr-true,f-auto,q-80/inventory/product/d2490b58-8be0-46f7-ba20-3dcd4ee4caf0-tmp/e5db0c77-4f50-43ca-8ea7-ce0b07011dd9.jpeg",
+        "productName": "Apple Golden (Granny Smith)",
+        "quantity": "4 pcs (Approx. 500g - 650g)",
+        "offers": "20",
+        "price": "240",
+        "id": "29"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/3f391c0e-ac99-492f-928c-d73dfa1244ee.jpeg",
+        "productName": "Raw Mango (Achar)",
+        "quantity": "500 g",
+        "offers": "20",
+        "price": "96",
+        "id": "30"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/1e4e4349-f490-45e1-ba71-172eac67b4221vA75D0BxzevGKtM6oD6ya4M5LOlvbJUb.jpeg",
+        "productName": "Khari Foods Blackberries Dried",
+        "quantity": "100 g",
+        "offers": "1",
+        "price": "123",
+        "id": "31"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/fcf98a2e-21a8-4897-9e36-625f739b27fb.jpeg",
+        "productName": "Orange Nagpur",
+        "quantity": "1 kg",
+        "offers": "20",
+        "price": "118",
+        "id": "32"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/97c16b0b-0b79-4ca6-8db9-26352d051afd.jpeg",
+        "productName": "Coconut",
+        "quantity": "",
+        "offers": "27",
+        "price": "52",
+        "id": "33"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/e9d172a4-870b-4984-961f-b52ef3732bca.jpeg",
+        "productName": "Apple Washington",
+        "quantity": "4 pcs (Approx. 500g - 540g)",
+        "offers": "19",
+        "price": "236",
+        "id": "34"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/7dcaf800-074c-4ac7-8501-632f9dd3df98.jpeg",
+        "productName": "Apple Royal Gala",
+        "quantity": "2 pcs (Approx. 250g - 270g)",
+        "offers": "19",
+        "price": "118",
+        "id": "35"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-225-225,pr-true,f-auto,q-80/inventory/product/6164bdaf-8a0d-419c-9e9b-4d48a3a01d79-download_(14).jpg",
+        "productName": "Khari Foods Roseberry Dried",
+        "quantity": "100 g",
+        "offers": "",
+        "price": "125",
+        "id": "36"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-1000,pr-true,f-auto,q-80/cms/product_variant/eec88f34-2f46-4a39-af79-d8a852f31b33.jpg",
+        "productName": "Mango Safeda",
+        "quantity": "2 piece",
+        "offers": "20",
+        "price": "216",
+        "id": "37"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/9f41ee33-79ec-4c2c-9763-181ea56b63b41rpvcFKvyzMJddo4oUFGvQJFjsfIe1_aO.jpeg",
+        "productName": "Khari Foods Kiwi Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "199",
+        "id": "38"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1080-1081,pr-true,f-auto,q-80/cms/product_variant/dace2245-e51f-43a3-8059-234e83de56741azdZB9LEzcbENWUfciGALjyCDYjkxEeL.jpeg",
+        "productName": "Khari Foods Peach Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "199",
+        "id": "39"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1081,pr-true,f-auto,q-80/cms/product_variant/6385885b-24f7-472b-b6d7-6d5ef0b3dc571ZcW5uFbqpTP5aQ_VaHDe0NdJKP7YWKXd.jpeg",
+        "productName": "Khari Foods Strawberry Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "349",
+        "id": "40"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/f1da72b1-685d-4857-9135-cf980125908b.jpeg",
+        "productName": "Khari Foods Apricot Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "375",
+        "id": "41"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/0f889e2e-6186-4926-8d0a-0ff1ca220cb11OZYI-EOZm0obuy1wOZwSlKvKq4ir9nbO.jpeg",
+        "productName": "Khari Foods Anjeer Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "399",
+        "id": "42"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/f7f7e38e-edb7-4b5f-b07b-141602092ff61NvCansePODHn9VW7Av5zbpkcv4-5SHZn.jpeg",
+        "productName": "Khari Foods Fruit Dried Mix",
+        "quantity": "200 g",
+        "offers": "20",
+        "price": "258",
+        "id": "43"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1080-1081,pr-true,f-auto,q-80/cms/product_variant/c62e31b8-77d5-4fab-a1d5-2da7acda21541Dl8gE_tY8rXiLYbcZ7i6vnG0w9zCPVRe.jpeg",
+        "productName": "Khari Foods Pineapple Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "199",
+        "id": "44"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/fc14669a-49dc-489a-9e13-bf435c6b97951i0TPlM-0pjoeuWGCTmXQ1Dq3hWh1DLuq.jpeg",
+        "productName": "Khari Foods Cranberry Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "275",
+        "id": "45"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1080-1081,pr-true,f-auto,q-80/cms/product_variant/9d95b567-8a96-4b25-8b48-c57222e5d3951Dl8gE_tY8rXiLYbcZ7i6vnG0w9zCPVRe.jpeg",
+        "productName": "Khari Foods Pineapple Ring Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "199",
+        "id": "46"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1081,pr-true,f-auto,q-80/cms/product_variant/6f57776c-b4b8-49d0-b730-3eddead44bf91oDzLWx5UTmKHKyUVqUU4Saxg8kIkh21Q.jpeg",
+        "productName": "Khari Foods Mango Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "225",
+        "id": "47"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1080-1080,pr-true,f-auto,q-80/cms/product_variant/ac223256-48f0-4556-88ce-0fd994603ea61blyAKKCcbG0cP7-kp_sDuyTuiAoN1xpd.jpeg",
+        "productName": "Khari Foods Cherry Dried",
+        "quantity": "200 g",
+        "offers": "",
+        "price": "275",
+        "id": "48"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/616f797d-9b11-4f7a-8dbc-8822730a684b.jpeg",
+        "productName": "Khari Foods Blueberry Dried",
+        "quantity": "150 g",
+        "offers": "",
+        "price": "425",
+        "id": "49"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-1000,pr-true,f-auto,q-80/cms/product_variant/4e4b6662-1350-4b4e-af57-9aff3f91a20c.jpeg",
+        "productName": "Khari Foods Kalmi Dates",
+        "quantity": "250 g",
+        "offers": "8",
+        "price": "207",
+        "id": "50"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1080-1081,pr-true,f-auto,q-80/cms/product_variant/f5ee8db6-947f-4937-913e-b3fe2f26d1251zETJFR0_5gp4fA0eW-AC_hWZbUlA0hbQ.jpeg",
+        "productName": "Khari Foods Papaya Dried",
+        "quantity": "200 g",
+        "offers": "20",
+        "price": "230",
+        "id": "51"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/8d02c62d-34de-47c7-8359-5bc8d33d485a.jpeg",
+        "productName": "Khari Foods Blueberry Dried",
+        "quantity": "200 g",
+        "offers": "19",
+        "price": "338",
+        "id": "52"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-1000,pr-true,f-auto,q-80/cms/product_variant/56bb9910-cf2b-4526-b02b-82c406221017.jpeg",
+        "productName": "Khari Foods Zahidi Dates",
+        "quantity": "250 g",
+        "offers": "20",
+        "price": "79",
+        "id": "53"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1035-926,pr-true,f-auto,q-80/inventory/product/45d62e3b-8136-4330-9d72-ad6a1d5f3841-image_file.webp",
+        "productName": "Tender Jack Fruit",
+        "quantity": "300 GRAM",
+        "offers": "16",
+        "price": "131",
+        "id": "54"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/a77b7896-b8b0-442a-b592-e7c62b0979d4.jpeg",
+        "productName": "Tender Coconut",
+        "quantity": "",
+        "offers": "23",
+        "price": "147",
+        "id": "55"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/6a98c098-a5c2-4c29-927a-83b4c226a4d2.jpeg",
+        "productName": "Banana Robusta",
+        "quantity": "",
+        "offers": "23",
+        "price": "66",
+        "id": "56"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/af60456d-38af-4c52-adb1-09f20a941914.jpeg",
+        "productName": "Tender Coconut",
+        "quantity": "1 pc (Min. 250 ml water)",
+        "offers": "20",
+        "price": "51",
+        "id": "57"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-900-1124,pr-true,f-auto,q-80/cms/product_variant/7ab0f7dc-9415-4fb2-b4bd-73c7043e5e90.jpg",
+        "productName": "Banana Robusta Baby",
+        "quantity": "4 piece",
+        "offers": "20",
+        "price": "43",
+        "id": "58"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-445-445,pr-true,f-auto,q-80/inventory/product/3607a05b-f8ee-4984-be61-512c13e2cea6-Photo.jpeg",
+        "productName": "Apple Kashmir",
+        "quantity": "1 kg",
+        "offers": "19",
+        "price": "209",
+        "id": "59"
+    },
+    {
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/43f93ffb-7ce2-4269-8bd9-14d43e480b9d.jpeg",
+        "productName": "Grapes Green Sonaka Seedless",
+        "quantity": "500 g",
+        "offers": "19",
+        "price": "57",
+        "id": "60"
+    }
+],
+"Vegetables":[
+  {
+      "offers":24,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/086ca229-876f-4e32-b24c-60e9c24f0a7f.jpeg",
+      "productName": "Tomato Local",
+      "price": 108,
+      "quantity": "2 Kg",
+      "id": "1"
+  },
+  {
+      "offers":23,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/7a93e47b-0b8a-40fd-aff9-a6c61516eabb.jpeg",
+      "productName": "Onion",
+      "price":76,
+      "quantity": "2 Kg",
+      "id": "2"
+  },
+  {
+      "offers": 25,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-408-314,pr-true,f-auto,q-80/cms/product_variant/5ec56666-d2ea-4766-a384-0af47a01175c.png",
+      "productName": "Potato New",
+      "price": 40,
+      "quantity": "2 Kg",
+      "id": "3"
+  },
+  {
+      "offers": 23,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/c0bef2a2-3e44-4573-a433-8ecec991d6f2.jpeg",
+      "productName": "Cucumber English",
+      "price": 76,
+      "quantity": "1 Kg",
+      "id": "4"
+  },
+  {
+      "offers": 24,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/696d66a4-dfac-45d0-8904-f35f838574f5.jpeg",
+      "productName": "Lady Finger",
+      "price": 66,
+      "quantity": "500gms",
+      "id": "5"
+  },
+  {
+      "offers": 24,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/13e25e64-ca2c-4d57-9ade-5b109041028b.jpeg",
+      "productName": "Cucumber Hybrid",
+      "price": 66,
+      "quantity": "1 Kg",
+      "id": "6"
+  },
+  {
+      "offers": 22,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/eee64985-9f62-4791-a392-b634ee5ffff3.jpeg",
+      "productName": "Tomato Hybrid",
+      "price": 132,
+      "quantity": "2 Kg",
+      "id": "7"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/ffc59394-d484-416d-bf0b-1bb4b913d6f9-eb8287e9-bb9b-4657-8ed7-7565076be012.jpeg",
+      "productName": "Beans Broad",
+      "price": 74,
+      "quantity": "500 g",
+      "id": "8"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/f3f00537-b2d7-4a81-b581-f72503bfd0d7.jpeg",
+      "productName": "Capsicum Green",
+      "price": 68,
+      "quantity": "500 g",
+      "id": "9"
+  },
+  {
+      "offers": 22,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-225-225,pr-true,f-auto,q-80/inventory/product/d8be9529-c393-4680-be8a-4dd0d0b68238-Photo.jpeg",
+      "productName": "Carrot Halwa",
+      "price": 22,
+      "quantity": "1 kg",
+      "id": "10"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/651e4a37-7b0d-4f52-a014-4267ca78fa23.jpeg",
+      "productName": "Bottle Gourd",
+      "price": 44,
+      "quantity": "1 pc (Approx. 400g - 700g)",
+      "id": "11"
+  },
+  {
+      "offers": 19,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-7097-2637,pr-true,f-auto,q-80/inventory/product/9ec0beac-81cf-4329-98ae-771dd509b7cf-shutterstock_793795639.jpg",
+      "productName": "American Sweet Corn",
+      "price": 102,
+      "quantity": "2 pcs (Approx. 400g - 500g)",
+      "id": "12"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/e96e943f-4c39-4a79-a36f-2554e201582a-tmp/30d3c540-b407-4191-b9f4-435b68506ac0.jpeg",
+      "productName": "Baby Corn",
+      "price": 98,
+      "quantity": "250 g",
+      "id": "13"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-667,pr-true,f-auto,q-80/inventory/product/ad1e4851-4134-4191-b0a2-69af086fe5e2-Photo.jpeg",
+      "productName": "Carrot Black",
+      "price": 73,
+      "quantity": "500 g",
+      "id": "14"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-466-310,pr-true,f-auto,q-80/inventory/product/87ddeabc-8314-49cb-8447-cfa1a9948039-9b929aef-1234-4dba-ba20-957e79dd000b.jpeg",
+      "productName": "Live Organic Methi",
+      "price": 84,
+      "quantity": "400 g",
+      "id": "15"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/c815da73-f67b-4066-aac6-7566cf8931c9.jpeg",
+      "productName": "Tomato Local",
+      "price": 54,
+      "quantity": "1 kg",
+      "id": "16"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8e8ad1f9-cae2-496b-b437-54f6925aab99.jpeg",
+      "productName": "Zucchini Green",
+      "price": 90,
+      "quantity": "(Approx. 500g - 550g)",
+      "id": "17"
+  },
+  {
+      "offers": 24,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/2ae0814e-0866-4c57-8880-039c71d81662.jpeg",
+      "productName": "Beetroot",
+      "price": 74,
+      "quantity": "",
+      "id": "18"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/b07c66f8-728f-497e-97f2-3cc52562c58f-e04c9038-0948-4ea5-b57a-38ef73618fa4.jpeg",
+      "productName": "Turnip",
+      "price": 43,
+      "quantity": "500 g",
+      "id": "19"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/9a1c248d-21c9-449b-9f0d-3711377049b1-a2738031-3cf9-4b0f-b962-4259f8ba7b1d.jpeg",
+      "productName": "Lotus Stem",
+      "price": 70,
+      "quantity": "250 g",
+      "id": "20"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/f4570094-5a1e-4c5c-bf5c-ed567a33557a.jpeg",
+      "productName": "Capsicum Red",
+      "price": 66,
+      "quantity": "1 pc (Approx. 130g - 150g)",
+      "id": "21"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/289fedbb-3c24-407b-9835-e4ef48722f9f.jpeg",
+      "productName": "Radish White",
+      "price": 32,
+      "quantity": "500 g",
+      "id": "22"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/cf1c4deb-c44a-46a0-a679-d6af788afad4.jpeg",
+      "productName": "Mushroom Button",
+      "price": 50,
+      "quantity": "1 pack (Approx. 190g - 200g)",
+      "id": "23"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/0556174b-2350-45f9-829f-1859ac0a0b38.jpeg",
+      "productName": "Cabbage",
+      "price": 33,
+      "quantity": "1 pc (Approx. 500g - 800g)",
+      "id": "24"
+  },
+  {
+      "offers": 19,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/6e8a3f25-06a0-4441-affa-239060f76838.jpeg",
+      "productName": "Potato",
+      "price": 56,
+      "quantity": "3 kg",
+      "id": "25"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-800-800,pr-true,f-auto,q-80/cms/product_variant/8ce77b2d-380e-4253-a095-8456acf82b52.jpeg",
+      "productName": "Beans Bankla",
+      "price": 70,
+      "quantity": "250 g",
+      "id": "26"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/41350ff5-df8d-4f9c-a361-8c1f313e951d.jpeg",
+      "productName": "Round Gourd (Tinda)",
+      "price": 130,
+      "quantity": "500 g",
+      "id": "27"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/91ad58a5-7112-4087-810c-ec977c5c5e9e.jpeg",
+      "productName": "Capsicum Yellow",
+      "price": 70,
+      "quantity": "1 pc (Approx. 130g - 150g)",
+      "id": "28"
+  },
+  {
+      "offers": 22,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/f477a90d-ffa7-47d4-a419-68c7ffbb92e0.jpeg",
+      "productName": "Beans French",
+      "price": 31,
+      "quantity": "250 g",
+      "id": "29"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/ddac98d5-daab-40f6-b0b3-9ec9536c0e29.jpeg",
+      "productName": "Onion",
+      "price": 109,
+      "quantity": "3 kg",
+      "id": "30"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/87ba5567-09fd-4e76-9a4e-0dc1d7fdd341.jpeg",
+      "productName": "Cauliflower",
+      "price": 28,
+      "quantity": "1 pc (Approx. 400g - 600g)",
+      "id": "31"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-980-875,pr-true,f-auto,q-80/inventory/product/0e6e3213-021b-4a17-b9dd-9056f6e92942-image_file.jpeg",
+      "productName": "Sweet Corn Pack",
+      "price": 49,
+      "quantity": "200 g",
+      "id": "32"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/2a9d594b-888b-4417-a4b3-22e801a2696c.jpeg",
+      "productName": "Organic Onion",
+      "price": 41,
+      "quantity": "500 g",
+      "id": "33"
+  },
+  {
+      "offers": 25,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/5a523eb6-a2c4-4f4a-9469-cd9ab1f142d4.jpeg",
+      "productName": "Colocasia (Arbi)",
+      "price": 104,
+      "quantity": "",
+      "id": "34"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1000-1000,pr-true,f-auto,q-80/inventory/product/716483f6-dc24-4f4e-9ebc-6caef8366d91-tmp/34120f2a-a36d-417b-86d6-14eac91b9765.jpeg",
+      "productName": "Organic Beetroot",
+      "price": 77,
+      "quantity": "500 g",
+      "id": "35"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-400-300,pr-true,f-auto,q-80/inventory/product/8e183457-c6c4-4268-8065-042d1af8c5de-/tmp/20230809-0859171.jpeg",
+      "productName": "Organic Capsicum Green",
+      "price": 69,
+      "quantity": "250 g",
+      "id": "36"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/f9558ac1-4b6a-4c2b-87ab-f3b090ee781e.jpeg",
+      "productName": "Beetroot",
+      "price": 37,
+      "quantity": "500 g",
+      "id": "37"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/835a15a1-f0b9-4451-a7f1-49dfa80d0e8a.jpeg",
+      "productName": "Sweet Potato",
+      "price": 65,
+      "quantity": "500 g",
+      "id": "38"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-900-900,pr-true,f-auto,q-80/inventory/product/50016d31-8160-436d-9790-532a29cfe5eb-14ab97fe-488b-4934-935e-941f5a937167.jpeg",
+      "productName": "Hydroponic Cherry Tomato",
+      "price": 121,
+      "quantity": "200 g",
+      "id": "39"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/514e38db-5537-4cc0-967d-65b11e8a6f6b.jpeg",
+      "productName": "Carrot Red",
+      "price": 35,
+      "quantity": "1 kg",
+      "id": "40"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/aa456492-89e2-4ac5-b53b-bee3e1fe683f.jpeg",
+      "productName": "Cucumber English",
+      "price": 38,
+      "quantity": "500 g",
+      "id": "41"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/16fc175f-765c-49b6-aa37-120618ebe749.jpeg",
+      "productName": "Lady Finger",
+      "price": 33,
+      "quantity": "250 g",
+      "id": "42"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/593f99e8-b73f-4452-97ee-f95c06f06087-5bb7ef11-cbc3-46e7-949e-cb1a42cf88a5.jpeg",
+      "productName": "Organic Radish",
+      "price": 53,
+      "quantity": "500 g",
+      "id": "43"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/b5af3008-ba18-4868-bfec-53657413cdac.jpeg",
+      "productName": "Cabbage Red",
+      "price": 38,
+      "quantity": "500 g",
+      "id": "44"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/c4f9d22d-edf4-46ce-82d8-26017ab89f26.jpeg",
+      "productName": "Cucumber Hybrid",
+      "price": 33,
+      "quantity": "500 g",
+      "id": "45"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-408-314,pr-true,f-auto,q-80/cms/product_variant/348282a4-84de-4a61-9257-a916a9790774potato20new.PNG",
+      "productName": "Potato New",
+      "price": 20,
+      "quantity": "1 kg",
+      "id": "46"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/d47ac87c-a5b3-48b3-91b7-9ddc5a49af03.jpeg",
+      "productName": "Colocasia (Arbi)",
+      "price": 52,
+      "quantity": "250 g",
+      "id": "47"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/f470c816-7ae7-4150-b9a0-91c8106c4671.jpeg",
+      "productName": "Onion",
+      "price": 38,
+      "quantity": "1 kg",
+      "id": "48"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8e7c625f-b6e2-4761-9ed9-dd96d639d2db.jpeg",
+      "productName": "Bitter Gourd",
+      "price": 87,
+      "quantity": "500 g",
+      "id": "49"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-400-400,pr-true,f-auto,q-80/inventory/product/55452ca3-42bd-41a6-9657-d02f2a2a967b-ecf6d93d-2db5-4409-8bd6-6fcb6472b928.jpeg",
+      "productName": "Onion Sirka",
+      "price": 37,
+      "quantity": "500 g",
+      "id": "50"
+  },
+  {
+      "offers":20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-7097-2637,pr-true,f-auto,q-80/cms/product_variant/79ab425d-4087-4f36-b520-cef53f21a52c.jpg",
+      "productName": "American Sweet Corn",
+      "price": 204,
+      "quantity": "",
+      "id": "51"
+  },
+  {
+      "offers":20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/dfb4894b-702f-47cf-b82a-1d9a9f39b5ac.jpeg",
+      "productName": "Green Peas",
+      "price":39,
+      "quantity": "500 g",
+      "id": "52"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-600-600,pr-true,f-auto,q-80/inventory/product/885fb6de-0607-49fd-b375-f5202d11d753-60b1bf9e-c230-447c-830f-c3796c1e6ccd.jpeg",
+      "productName": "Potato Red",
+      "price": 54,
+      "quantity": "1 kg",
+      "id": "53"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-466-359,pr-true,f-auto,q-80/inventory/product/c42b136a-3320-42c8-8a2b-6ef5ab7107a3-/tmp/20230809-0859091.jpeg",
+      "productName": "Organic Arbi (Colocasia)",
+      "price": 72,
+      "quantity": "250 g",
+      "id": "54"
+  },
+  {
+      "offers":20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-5398-2980,pr-true,f-auto,q-80/inventory/product/c896c24f-3672-41e4-a05d-5c83745cbb32-shutterstock_1205251243_(1).jpg",
+      "productName": "Zucchini Yellow",
+      "price": 59,
+      "quantity": "2 pcs (Approx. 300g - 400g)",
+      "id": "55"
+  },
+  {
+      "offers":21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/9502470e-f1db-4bc2-a308-0a7d914d7c6b.jpeg",
+      "productName": "Organic Potato",
+      "price":38,
+      "quantity": "500 g",
+      "id": "56"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/2442116f-4a35-42b3-9356-6126d885eaab-7220619d-3b63-40a3-855d-d847eb182a64.jpeg",
+      "productName": "Papaya Raw",
+      "price": 43,
+      "quantity": "1 pc (Approx. 500g - 700g)",
+      "id": "57"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8584f03f-5154-4325-88f5-e1bf3f31c674.jpeg",
+      "productName": "Baby Potato",
+      "price": 19,
+      "quantity": "500 g",
+      "id": "58"
+  },
+  {
+      "offers": 20,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-400-300,pr-true,f-auto,q-80/inventory/product/f1db3add-00f7-4db4-b69f-ec7e71aa360b-bcb70a94-19ac-4161-92de-4fd437f11489.jpeg",
+      "productName": "Organic Carrot Red",
+      "price": 50,
+      "quantity": "500 g",
+      "id": "59"
+  },
+  {
+      "offers": 21,
+      "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-400-300,pr-true,f-auto,q-80/inventory/product/044c9917-012e-4dbd-a4ee-7f5dced6d5b8-/tmp/20230809-0859031.jpeg",
+      "productName": "Organic Cabbage",
+      "price": 38,
+      "quantity": "250 g",
+      "id": "60"}
+  ]
   }
