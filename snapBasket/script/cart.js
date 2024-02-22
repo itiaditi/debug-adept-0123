@@ -49,19 +49,213 @@ let uId=cartData[1].product.userid;
 
 function displayData(arr)
 {
-    let productDiv=document.createElement('div');
+    let box=document.getElementById('container');
+
+    // top Box
+    let topBox=document.createElement('div');
+    topBox.style.border="1px solid green";
+    topBox.style.width='65%';
+    topBox.style.height='10vh';
+    topBox.style.margin='auto';
+    topBox.style.display='flex';
+    topBox.style.justifyContent='space-Between';
+    topBox.style.alignItems='center';
+
+    let firstInnerBox=document.createElement('div');
+    firstInnerBox.style.display='flex';
+    firstInnerBox.style.justifyContent='space-between'
+    firstInnerBox.style.alignItems='center';
+    firstInnerBox.style.width='45%';
+    firstInnerBox.style.border='1px solid teal';
+    let cartHeading=document.createElement('h3');
+    cartHeading.innerText='Cart(total items)';
+
+    let priceDiv=document.createElement('div');
+    priceDiv.style.display='flex';
+    priceDiv.style.width='65%';
+    priceDiv.style.borderRadius='7px';
+    priceDiv.style.justifyContent='center';
+    priceDiv.style.alignItems='center';
+    priceDiv.style.backgroundColor='rgb(218,244,229)';
+
+    let discountHeadingTop=document.createElement('h3');
+    discountHeadingTop.innerText='₹120'; //need to calculate discont price
+    discountHeadingTop.style.fontWeight='bold';
+    discountHeadingTop.style.margin='0px'
+
+    let discountText=document.createElement('p');
+    discountText.innerText='saved on this order';
+    discountText.style.marginTop='9px';
+    discountText.style.marginLeft='10px';
+
+    let emptyBtnDiv=document.createElement('div');
+    emptyBtnDiv.style.height='35%';
+    emptyBtnDiv.style.border='1px solid rgb(255,50,105)';
+    emptyBtnDiv.style.padding='5px';
+    emptyBtnDiv.style.borderRadius='5px'
+
+
     let emptyBtn=document.createElement('button');
     emptyBtn.innerText='Empty cart';
-    emptyBtn.style.border='1px solid hotpink';
-    emptyBtn.addEventListener('click',emptyCart);
-    // arr.forEach((element)=>{
-        
+    emptyBtn.style.border='none';
+    emptyBtn.addEventListener('click',()=>{
+        console.log('HI');
+        emptyCart(uiAfterRemovingProduct)
+    } );
+  
+    emptyBtnDiv.append(emptyBtn);
+    priceDiv.append(discountHeadingTop,discountText);
+    firstInnerBox.append(cartHeading,priceDiv)
+    topBox.append(firstInnerBox,emptyBtnDiv);
+  
 
-    // })
-    let box=document.getElementById('container');
-    box.append(emptyBtn);
+
+
+    //mainBox
+    let mainBox=document.createElement('div');
+    mainBox.style.border="1px solid green";
+    mainBox.style.width='65%';
+    mainBox.style.height='60vh';
+    mainBox.style.margin='auto';
+    mainBox.style.display='flex';
+    mainBox.style.justifyContent='space-between'
+    mainBox.style.alignItems='center';
+   
+
+    let leftBox=document.createElement('div');
+    leftBox.style.height='100%';
+    leftBox.style.width='58%';
+    leftBox.style.border='1px dashed red';
+
+    let rightBox=document.createElement('div');
+    rightBox.style.height='90%';
+    rightBox.style.width='40%';
+    rightBox.style.border='1px dashed red';
+   
+
+    let firstInnerRightBox=document.createElement('div');
+    firstInnerRightBox.style.display='flex';
+    // firstInnerRightBox.style.border='1px solid blue';
+    firstInnerRightBox.style.width='100%';
+    firstInnerRightBox.style.height='10vh';
+    firstInnerRightBox.style.borderRadius='10px';
+    firstInnerRightBox.style.backgroundColor='white';
+    firstInnerRightBox.style.marginTop='10px';
+
+    let image=document.createElement('img')
+    image.style.borderRadius='50%'
+    image.setAttribute('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIWeQ3i6AWW1Bd0LhRJMjz0VrO_SUXNGbj2G52moiTfNwqYG7');
+
+
+    firstInnerRightBox.append(image);
+    rightBox.append(firstInnerRightBox);
+
+    let secondInnerRightBox=document.createElement('div');
+    secondInnerRightBox.style.display='flex';
+    // secondInnerRightBox.style.border='1px solid blue';
+    secondInnerRightBox.style.width='100%';
+    secondInnerRightBox.style.height='20vh';
+    secondInnerRightBox.style.borderRadius='10px';
+    secondInnerRightBox.style.backgroundColor='white';
+    secondInnerRightBox.style.marginTop='10px';
+    rightBox.append(secondInnerRightBox);
+
+    let thirdInnerRightBox=document.createElement('div');
+    thirdInnerRightBox.style.display='flex';
+    // thirdInnerRightBox.style.border='1px solid blue';
+    thirdInnerRightBox.style.width='100%';
+    thirdInnerRightBox.style.height='20vh';
+    thirdInnerRightBox.style.borderRadius='10px';
+    thirdInnerRightBox.style.backgroundColor='white';
+    thirdInnerRightBox.style.marginTop='10px';
+    rightBox.append(thirdInnerRightBox);
+
+    mainBox.append(leftBox,rightBox);
+    box.append(topBox,mainBox);
 }
 displayData(arr);
+
+
+
+ //empty cart function
+async function emptyCart(uiAfterRemovingProduct)
+{
+    try {
+        let res= await fetch('url', {
+            method: 'DELETE', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (res.ok) {
+            console.log('Cart data deleted successfully on the server.');
+            localStorage.removeItem('cart');
+        } else {
+            console.log('Error deleting cart data on the server.');
+        }
+    } catch (error) {
+        console.log( error);
+    }
+    uiAfterRemovingProduct();
+}
+
+function uiAfterRemovingProduct()
+{
+    let box=document.getElementById('container');
+    box.innerHTML="";
+    let uiBox=document.createElement('div');
+    uiBox.style.width='100vw';
+    uiBox.style.height='100vh';
+    uiBox.style.border='1px solid yellow';
+
+    let imageEmptyBag=document.createElement('img');
+    imageEmptyBag.setAttribute('src','https://cdn.zeptonow.com/app/images/empty-bag.png?tr=w-640,q-70');
+    imageEmptyBag.style.width='3%';
+   
+    imageEmptyBag.style.margin='100px auto auto auto';
+    imageEmptyBag.style.display='block'
+
+    let emptyText=document.createElement('h4');
+    emptyText.innerText='Your cart is empty';
+    
+   
+    let innerBox=document.createElement('div');
+    innerBox.style.display='flex';
+    innerBox.style.justifyContent='center';
+
+    let productBrowseDiv=document.createElement('div');
+
+    let productBrowseBtn=document.createElement('button');
+    productBrowseBtn.innerText='Browse Products';
+    productBrowseBtn.style.color='rgb(255,50,105)';
+    productBrowseBtn.style.border='none';
+    productBrowseBtn.style.backgroundColor="rgb(245,241,247)";
+    productBrowseBtn.style.fontWeight='bold';
+
+   
+    emptyText.style.display='flex';
+    emptyText.style.justifyContent='center';
+
+    productBrowseDiv.append(productBrowseBtn);
+    productBrowseDiv.style.display='flex';
+    productBrowseDiv.style.justifyContent='center';
+    productBrowseDiv.style.width='8%';
+    productBrowseDiv.style.border='1px solid rgb(255,50,105)';
+    productBrowseDiv.style.padding='10px 3px 10px 3px';
+    productBrowseDiv.style.borderRadius='5px'
+
+    innerBox.append(productBrowseDiv);
+    uiBox.append(imageEmptyBag,emptyText,innerBox);
+    box.append(uiBox);
+}
+
+
+
+
+
+
+ 
 
 
 
