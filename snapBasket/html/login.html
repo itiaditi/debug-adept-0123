@@ -4,6 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="../style/login.css" />
   </head>
-  <body></body>
+  <body>
+    <div>
+      <div class="profile-account">
+        <div class="accountLayout">
+          <div class="accountLayoutMain">
+            <aside class="accountLayoutAside">
+              <div class="accountLeft">
+                <div class="accountLeftPartDetails">
+                  <div class="detail">
+                    <h3 class="h3">My Account</h3>
+                    <h4 class="h4">+91 7650064879</h4>
+                  </div>
+                  <div class="divider"></div>
+                </div>
+                <div class="accountLeftPart" id="orders">Orders</div>
+                <div class="accountLeftPart" id="customer">
+                  Customer Support
+                </div>
+                <div class="accountLeftPart">Addresses</div>
+                <div class="accountLeftPart">Profile</div>
+                <div class="accountLeftPart">Wallet</div>
+                <div class="accountLeftPart_logout">
+                  <div class="divider"></div>
+                  <div class="accountLeftPart">Logout</div>
+                </div>
+              </div>
+            </aside>
+            <div class="accountLayoutBody">
+              <div class="accountLayoutBodyInner">
+                <!-- show order detail when click on orders -->
+                <div id="orderDetail">
+                  <div id="orderDetailLeft">
+                    <h4 class="orderHeading">Amul butter</h4>
+                    <p class="p">Order</p>
+                    <p class="p">20/02/2024 at 8:40pm</p>
+                  </div>
+                  <div id="orderDetaiRight">
+                    <h4 class="orderHeading">₹134.49</h4>
+                    <button id="cancel">Cancelled</button>
+                  </div>
+                </div>
+                <!-- show order detail when click on orders -->
+
+                <!-- show customer support -->
+                <div id="support">
+                  <p class="contact-us">Contact Us</p>
+                  <div id="supportInner">
+                    <div class="email">
+                      <div class="emailIcon">
+                        <span
+                          style="font-size: 40px"
+                          class="material-symbols-outlined"
+                        >
+                          alternate_email
+                        </span>
+                      </div>
+                      <div class="emailDetail">
+                        <p>Email</p>
+                        <p style="font-size: 15px">support@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="email">
+                      <div class="emailIcon">
+                        <span
+                          style="font-size: 40px"
+                          class="material-symbols-outlined"
+                        >
+                          chat
+                        </span>
+                      </div>
+                      <div class="emailDetail">
+                        <p>Chat with us</p>
+                        <p style="font-size: 15px; color: white">.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- show customer support -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup">
+      <h1>This is a popup!</h1>
+      <p>Click anywhere to close.</p>
+    </div>
+    <script src="../script/login.js"></script>
+  </body>
 </html>
