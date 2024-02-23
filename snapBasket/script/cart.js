@@ -1,163 +1,23 @@
-let cartUserId = "2";
-let cartid='3';
-let cid='aditi@gmail.com'
-let cartEmail="mimi@gmail.com";
-let cid1="indrani@gmail.com";
-// //Update data function
-// async function updateData(cartUserId) {
-//   try {
-//     let res = await fetch(`http://localhost:3000/cart/${cartUserId}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         id: 2,
-//         email: "indrani@gmail.com",
-//         totalItem: 10,
-//         product: [
-//           {
-//             imageLink:
-//               "https://cdn.zeptonow.com/production///tr:w-200,ar-804-748,pr-true,f-auto,q-80/inventory/product/93325143-6e7b-495f-b8c9-c0f395d59d00-baby_apple_shimla.PNG",
-//             productName: "Baby Apple Shimla",
-//             quantity: "2 kg (Approx. 9 - 12 pcs)",
-//             offers: "15",
-//             price: "192",
-//             productId: "2",
-//             eachTotalItem: 1,
-//           },
-//         ],
-//       }),
-//     });
-
-//     if (res.ok) {
-//       let data = await res.json();
-//       console.log(data);
-//     } else {
-//       console.log(`Error: ${res.status} - ${res.statusText}`);
-//     }
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// }
-
-// document.getElementById("update_btn").addEventListener("click", () => {updateData(cartUserId)});
-
-// //delete Data function
-// async function deleteData(cartid)
-// {
-//   try{
-//     let res=await fetch(`http://localhost:3000/cart/${cartid}`,{method:'DELETE'});
-//     console.log(res);
-//   }
-//   catch(error)
-//   {
-//     console.log(error);
-//   }
-// }
-
-// document.getElementById('delete_btn').addEventListener('click',()=>{deleteData(cartid)});
+let cartEmail = "indrani@gmail.com";
 
 async function getData() {
   try {
-    let res = await fetch(`http://localhost:3000/cart?email=${cartEmail}`);
+    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`);
     let data = await res.json();
-    console.log(res);
-    if (res.ok) {
-      console.log(data);
-      if(data[0].product.length==0)
-      uiAfterRemovingProduct();
-    else
-    console.log("hello");
-    displayData(data[0].product);
-    }
-  } catch (error) {
-    console.log(error);
-    
+
+    const products = data.product;
+    let totalItem = data.totalItem;
+    let totalAmount = data.totalAmount;
+
+    displayData(products, totalItem, totalAmount);
+  } catch (err) {
+    console.log(err);
   }
 }
 
 getData();
 
-
-
-// empty cart
-async function emptyCart() {
-  try {
-    let res = await fetch(`http://localhost:3000/cart?email=${cartEmail}`, {
-      method: 'PATCH',
-      body: JSON.stringify({
-        "product":[],
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (res.ok) {
-      console.log("Cart data deleted successfully on the server.");
-      localStorage.removeItem("cart");
-    } else {
-      console.log("Error deleting cart data on the server.");
-    }
-  } catch (error) {
-    console.log(error);
-  }
-  uiAfterRemovingProduct();
-}
-
-function uiAfterRemovingProduct() {
-  console.log('mimi');
-  let box = document.getElementById("container");
-  box.innerHTML = "";
-  let uiBox = document.createElement("div");
-  uiBox.style.width = "100vw";
-  uiBox.style.height = "100vh";
-  uiBox.style.border = "1px solid yellow";
-
-  let imageEmptyBag = document.createElement("img");
-  imageEmptyBag.setAttribute(
-    "src",
-    "https://cdn.zeptonow.com/app/images/empty-bag.png?tr=w-640,q-70"
-  );
-  imageEmptyBag.style.width = "3%";
-
-  imageEmptyBag.style.margin = "100px auto auto auto";
-  imageEmptyBag.style.display = "block";
-
-  let emptyText = document.createElement("h4");
-  emptyText.innerText = "Your cart is empty";
-
-  let innerBox = document.createElement("div");
-  innerBox.style.display = "flex";
-  innerBox.style.justifyContent = "center";
-
-  let productBrowseDiv = document.createElement("div");
-
-  let productBrowseBtn = document.createElement("button");
-  productBrowseBtn.innerText = "Browse Products";
-  productBrowseBtn.style.color = "rgb(255,50,105)";
-  productBrowseBtn.style.border = "none";
-  productBrowseBtn.style.backgroundColor = "rgb(245,241,247)";
-  productBrowseBtn.style.fontWeight = "bold";
-
-  emptyText.style.display = "flex";
-  emptyText.style.justifyContent = "center";
-
-  productBrowseDiv.append(productBrowseBtn);
-  productBrowseDiv.style.display = "flex";
-  productBrowseDiv.style.justifyContent = "center";
-  productBrowseDiv.style.width = "8%";
-  productBrowseDiv.style.border = "1px solid rgb(255,50,105)";
-  productBrowseDiv.style.padding = "10px 3px 10px 3px";
-  productBrowseDiv.style.borderRadius = "5px";
-
-  innerBox.append(productBrowseDiv);
-  uiBox.append(imageEmptyBag, emptyText, innerBox);
-  box.append(uiBox);
-}
-
-function displayData(productArr) {
+function displayData(productArr, totalItem, totalAmount) {
   let box = document.getElementById("container");
 
   // top Box
@@ -208,7 +68,7 @@ function displayData(productArr) {
   emptyBtn.style.border = "none";
   emptyBtn.addEventListener("click", () => {
     console.log("HI");
-    emptyCart(uiAfterRemovingProduct);
+    // emptyCart(uiAfterRemovingProduct);
   });
 
   emptyBtnDiv.append(emptyBtn);
@@ -225,14 +85,13 @@ function displayData(productArr) {
   mainBox.style.display = "flex";
   mainBox.style.justifyContent = "space-between";
   mainBox.style.alignItems = "center";
-  
 
   let leftBox = document.createElement("div");
   leftBox.style.height = "100%";
   leftBox.style.width = "58%";
   leftBox.style.border = "1px dashed red";
-  leftBox.style.backgroundColor='white';
-  leftBox.style.borderRadius='10px';
+  leftBox.style.backgroundColor = "white";
+  leftBox.style.borderRadius = "10px";
 
   let rightBox = document.createElement("div");
   rightBox.style.height = "100%";
@@ -334,14 +193,14 @@ function displayData(productArr) {
   productArr.forEach((element) => {
     let parentBox = document.createElement("div");
     parentBox.style.display = "flex";
-    parentBox.style.border='1px solid green';
-    parentBox.style.width="90%";
-    parentBox.style.margin='30px auto 20px auto';
+    parentBox.style.border = "1px solid green";
+    parentBox.style.width = "90%";
+    parentBox.style.margin = "30px auto 20px auto";
     let imageBox = document.createElement("div");
-    imageBox.style.width="20%";
+    imageBox.style.width = "20%";
     let imageProduct = document.createElement("img");
     imageProduct.setAttribute("src", element.imageLink);
-    imageProduct.style.width="100%";
+    imageProduct.style.width = "100%";
     let middleBox = document.createElement("div");
 
     let proName = document.createElement("p");
@@ -354,51 +213,206 @@ function displayData(productArr) {
     proPrice.innerText = element.price;
 
     let btnBox = document.createElement("div");
-    btnBox.style.display='flex';
-    btnBox.style.border='1px solid';
-    btnBox.style.height='25px';
-    btnBox.style.width='70px';
-    btnBox.style.justifyContent='space-between';
-    btnBox.style.alignItems='center';
-    btnBox.style.borderRadius='7px';
-    btnBox.style.padding='5px 10px';
-    btnBox.style.backgroundColor='rgb(255,50,105)';
+    btnBox.style.display = "flex";
+    btnBox.style.border = "1px solid";
+    btnBox.style.height = "25px";
+    btnBox.style.width = "70px";
+    btnBox.style.justifyContent = "space-between";
+    btnBox.style.alignItems = "center";
+    btnBox.style.borderRadius = "7px";
+    btnBox.style.padding = "5px 10px";
+    btnBox.style.backgroundColor = "rgb(255,50,105)";
 
     let decBtn = document.createElement("button");
     decBtn.innerText = "-";
-    decBtn.style.border='none';
-    decBtn.style.background='rgb(255,50,105)';
-    decBtn.style.color='white';
-    // decBtn.addEventListener("click", eachProductDecrement(element.productId)); //decrement
+    decBtn.style.border = "none";
+    decBtn.style.background = "rgb(255,50,105)";
+    decBtn.style.color = "white";
+    decBtn.addEventListener("click", () => eachProductDecrement(element)); //decrement
 
     let quantityP = document.createElement("p");
-    
+
     quantityP.innerText = element.eachProductCount; //total quantity key is not present on db now
-    quantityP.style.color='white';
+    quantityP.style.color = "white";
     let incBtn = document.createElement("button");
     incBtn.innerText = "+";
-    incBtn.style.border='none';
-    incBtn.style.background='rgb(255,50,105)';
-    incBtn.style.color='white';
-    // incBtn.addEventListener("click", eachProductIncrement(element.productId)); //increment
+    incBtn.style.border = "none";
+    incBtn.style.background = "rgb(255,50,105)";
+    incBtn.style.color = "white";
+    incBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      eachProductIncrement(element, [...productArr], totalItem, totalAmount);
+    }); //increment
 
     imageBox.append(imageProduct);
-    middleBox.append(proName,proQuantity, proPrice);
+    middleBox.append(proName, proQuantity, proPrice);
     btnBox.append(decBtn, quantityP, incBtn);
     parentBox.append(imageBox, middleBox, btnBox);
     leftBox.append(parentBox);
   });
 }
 
-// async function eachProductIncrement()
-// {
-//     try{
-
-//     }
-//     catch(error){
-
-//     }
+// function eachProductDecrement(product) {
+//   console.log(product);
 // }
-// displayData(arr);
+
+// async function decrementPatch(val) {
+//   try {
+//     let res = await fetch(`http://localhost:3000/cart/${cartEmail}`, {
+//       method: "PATCH",
+//       body: JSON.stringify({
+//         product: [{ eachProductCount: "val" }],
+//       }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+
+//     if (res.ok) {
+//       console.log("Cart data deleted successfully on the server.");
+//       localStorage.removeItem("cart");
+//     } else {
+//       console.log("Error deleting cart data on the server.");
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 
+
+
+// Increment cart product
+function eachProductIncrement(product, allProducts, totalItem, totalAmount) {
+  allProducts.forEach((el) => {
+    if (el.id === product.id) {
+      el.eachProductCount = +el.eachProductCount + 1 + "";
+    }
+  });
+
+  totalItem = +totalItem + 1 + "";
+  totalAmount =
+    totalAmount + (product.price - (product.price * product.offers) / 100);
+  totalAmount = +totalAmount.toFixed(2);
+
+  updateCartProducts(allProducts, totalItem, totalAmount);
+}
+
+// Update cart products
+async function updateCartProducts(allProducts, totalItem, totalAmount) {
+  // console.log("Hello");
+  // return;
+  try {
+    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        product: allProducts,
+        totalItem: totalItem,
+        totalAmount: totalAmount,
+      }),
+    });
+
+    let data = await res.json();
+    console.log(data);
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+// document.getElementById("update_btn").addEventListener("click", () => {updateData(cartUserId)});
+
+// //delete Data function
+// async function deleteData(cartid)
+// {
+//   try{
+//     let res=await fetch(`http://localhost:3000/cart/${cartid}`,{method:'DELETE'});
+//     console.log(res);
+//   }
+//   catch(error)
+//   {
+//     console.log(error);
+//   }
+// }
+
+// document.getElementById('delete_btn').addEventListener('click',()=>{deleteData(cartid)});
+
+// empty cart
+// async function emptyCart() {
+//   try {
+//     let res = await fetch(`http://localhost:3000/cart/${cartEmail}`, {
+//       method: "PATCH",
+//       body: JSON.stringify({
+//         product: [],
+//         totalItem: "0",
+//       }),
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     });
+
+//     if (res.ok) {
+//       console.log("Cart data deleted successfully on the server.");
+//       localStorage.removeItem("cart");
+//     } else {
+//       console.log("Error deleting cart data on the server.");
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   uiAfterRemovingProduct();
+// }
+
+// function uiAfterRemovingProduct() {
+//   console.log("mimi");
+//   let box = document.getElementById("container");
+//   box.innerHTML = "";
+//   let uiBox = document.createElement("div");
+//   uiBox.style.width = "100vw";
+//   uiBox.style.height = "100vh";
+//   uiBox.style.border = "1px solid yellow";
+
+//   let imageEmptyBag = document.createElement("img");
+//   imageEmptyBag.setAttribute(
+//     "src",
+//     "https://cdn.zeptonow.com/app/images/empty-bag.png?tr=w-640,q-70"
+//   );
+//   imageEmptyBag.style.width = "3%";
+
+//   imageEmptyBag.style.margin = "100px auto auto auto";
+//   imageEmptyBag.style.display = "block";
+
+//   let emptyText = document.createElement("h4");
+//   emptyText.innerText = "Your cart is empty";
+
+//   let innerBox = document.createElement("div");
+//   innerBox.style.display = "flex";
+//   innerBox.style.justifyContent = "center";
+
+//   let productBrowseDiv = document.createElement("div");
+
+//   let productBrowseBtn = document.createElement("button");
+//   productBrowseBtn.innerText = "Browse Products";
+//   productBrowseBtn.style.color = "rgb(255,50,105)";
+//   productBrowseBtn.style.border = "none";
+//   productBrowseBtn.style.backgroundColor = "rgb(245,241,247)";
+//   productBrowseBtn.style.fontWeight = "bold";
+
+//   emptyText.style.display = "flex";
+//   emptyText.style.justifyContent = "center";
+
+//   productBrowseDiv.append(productBrowseBtn);
+//   productBrowseDiv.style.display = "flex";
+//   productBrowseDiv.style.justifyContent = "center";
+//   productBrowseDiv.style.width = "8%";
+//   productBrowseDiv.style.border = "1px solid rgb(255,50,105)";
+//   productBrowseDiv.style.padding = "10px 3px 10px 3px";
+//   productBrowseDiv.style.borderRadius = "5px";
+
+//   innerBox.append(productBrowseDiv);
+//   uiBox.append(imageEmptyBag, emptyText, innerBox);
+//   box.append(uiBox);
+// }

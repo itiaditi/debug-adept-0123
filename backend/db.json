@@ -973,12 +973,8 @@
     {
       "name": "Aditi",
       "email": "aditi@gmail.com",
-      "password": "qwerty123"
-    },
-    {
-      "name": "Mimi",
-      "email": "mimi@gmail.com",
-      "password": "1234"
+      "password": "qwerty123",
+      "token": "baow5reetoclsyfdf8d"
     }
   ],
   "admin": [
@@ -990,18 +986,58 @@
   ],
   "cart": [
     {
-      "id": 1,
-      "email": "aditi@gmail.com",
+      "id": "mimi@gmail.com",
+      "totalItem": "10",
       "product": [
         {
           "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-804-748,pr-true,f-auto,q-80/inventory/product/93325143-6e7b-495f-b8c9-c0f395d59d00-baby_apple_shimla.PNG",
           "productName": "Baby Apple Shimla",
-          "quantity": "1 kg (Approx. 9 - 12 pcs)",
-          "offers": "20",
+          "quantity": "2 kg (Approx. 9 - 12 pcs)",
+          "offers": "15",
           "price": "192",
-          "productId": "2"
+          "productId": "2",
+          "eachProductCount": "1"
         }
       ]
+    },
+    {
+      "product": [
+        {
+          "offers": 20,
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/2442116f-4a35-42b3-9356-6126d885eaab-7220619d-3b63-40a3-855d-d847eb182a64.jpeg",
+          "productName": "Papaya Raw",
+          "price": 43,
+          "quantity": "1 pc (Approx. 500g - 700g)",
+          "id": "57",
+          "eachProductCount": "11"
+        },
+        {
+          "offers": 21,
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8584f03f-5154-4325-88f5-e1bf3f31c674.jpeg",
+          "productName": "Baby Potato",
+          "price": 19,
+          "quantity": "500 g",
+          "id": "58",
+          "eachProductCount": "1"
+        },
+        {
+          "offers": 20,
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-400-300,pr-true,f-auto,q-80/inventory/product/f1db3add-00f7-4db4-b69f-ec7e71aa360b-bcb70a94-19ac-4161-92de-4fd437f11489.jpeg",
+          "productName": "Organic Carrot Red",
+          "price": 50,
+          "quantity": "500 g",
+          "id": "59",
+          "eachProductCount": "1"
+        }
+      ],
+      "totalItem": "13",
+      "totalAmount": 422.39,
+      "id": "indrani@gmail.com"
+    },
+    {
+      "id": "indu@gmail.com",
+      "totalItem": "10",
+      "product": []
     }
   ]
 }
