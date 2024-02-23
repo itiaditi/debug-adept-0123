@@ -969,7 +969,8 @@
   "customer":[{
 "name":"Aditi",
 "email":"aditi@gmail.com",
-"password":"qwerty123"
+"password":"qwerty123",
+"token":"baow5reetoclsyfdf8d"
   }],
   "admin":[{
     "userName":"admin@gmail.com",
@@ -977,17 +978,20 @@
     "shopId":111
   }],
   "cart":[{
-    "id":1,
-    "email":"aditi@gmail.com",
-"product":[{
-  "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-804-748,pr-true,f-auto,q-80/inventory/product/93325143-6e7b-495f-b8c9-c0f395d59d00-baby_apple_shimla.PNG",
-  "productName": "Baby Apple Shimla",
-  "quantity": "1 kg (Approx. 9 - 12 pcs)",
-  "offers": "20",
-  "price": "192",
-  "productId": "2"
-}
-]
+    "id": "mimi@gmail.com",
+    "totalItem": "10",
+    "product": [
+      {
+       
+        "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-804-748,pr-true,f-auto,q-80/inventory/product/93325143-6e7b-495f-b8c9-c0f395d59d00-baby_apple_shimla.PNG",
+        "productName": "Baby Apple Shimla",
+        "quantity": "2 kg (Approx. 9 - 12 pcs)",
+        "offers": "15",
+        "price": "192",
+        "productId": "2",
+        "eachProductCount": "1"
+      }
+    ]
   }
   ]
   }
