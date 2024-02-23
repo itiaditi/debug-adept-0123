@@ -128,7 +128,7 @@ function displayData(arr)
     leftBox.style.border='1px dashed red';
 
     let rightBox=document.createElement('div');
-    rightBox.style.height='90%';
+    rightBox.style.height='100%';
     rightBox.style.width='40%';
     rightBox.style.border='1px dashed red';
    
@@ -141,24 +141,91 @@ function displayData(arr)
     firstInnerRightBox.style.borderRadius='10px';
     firstInnerRightBox.style.backgroundColor='white';
     firstInnerRightBox.style.marginTop='10px';
+    firstInnerBox.style.display='flex';
+   
+    
 
-    let image=document.createElement('img')
-    image.style.borderRadius='50%'
-    image.setAttribute('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIWeQ3i6AWW1Bd0LhRJMjz0VrO_SUXNGbj2G52moiTfNwqYG7');
+    let firstBoximage=document.createElement('img')
+    firstBoximage.style.borderRadius='50%';
+    firstBoximage.setAttribute('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIWeQ3i6AWW1Bd0LhRJMjz0VrO_SUXNGbj2G52moiTfNwqYG7');
+
+    let firstBoxText=document.createElement('p');
+    firstBoxText.innerText='Avail Offers / Coupons';
 
 
-    firstInnerRightBox.append(image);
+    firstInnerRightBox.append(firstBoximage,firstBoxText);
     rightBox.append(firstInnerRightBox);
 
     let secondInnerRightBox=document.createElement('div');
-    secondInnerRightBox.style.display='flex';
-    // secondInnerRightBox.style.border='1px solid blue';
     secondInnerRightBox.style.width='100%';
     secondInnerRightBox.style.height='20vh';
     secondInnerRightBox.style.borderRadius='10px';
     secondInnerRightBox.style.backgroundColor='white';
     secondInnerRightBox.style.marginTop='10px';
+
+    let totalItemDiv=document.createElement('div');
+    totalItemDiv.style.display='flex';
+ 
+    let itemP=document.createElement('p');
+    itemP.innerText='Item Total';
+
+    let itemPrice=document.createElement('p');
+    totalItemDiv.append(itemP,itemPrice);
+
+    let handChargeDiv=document.createElement('div');
+    handChargeDiv.style.display='flex';
+   
+    let handP=document.createElement('p');
+    handP.innerText='Handling Charge';
+    let handChargePrice=document.createElement('p');
+    handChargeDiv.append(handP,handChargePrice);
+
+    let convenienceDiv=document.createElement('div');
+    convenienceDiv.style.display='flex';
+    let convenienceP=document.createElement('p');
+    convenienceP.innerText='Convenience Fee';
+    let conveniencePrice=document.createElement('p');
+    convenienceDiv.append(convenienceP,conveniencePrice);
+
+    let deliveryDiv=document.createElement('div');
+    deliveryDiv.style.display='flex';
+    let deliveryP=document.createElement('p');
+    deliveryP.innerText='Delivery Fee';
+    let deliveryPrice=document.createElement('p');
+    deliveryDiv.append(deliveryP,deliveryPrice);
+
+    let toPayDiv=document.createElement('div');
+    toPayDiv.style.display='flex';
+    let toPayP=document.createElement('p');
+    toPayP.innerText='To Pay';
+    let toPayPrice=document.createElement('p');
+    toPayDiv.append(toPayP,toPayPrice);
+
+
+    secondInnerRightBox.append(totalItemDiv,handChargeDiv,convenienceDiv,deliveryDiv,toPayDiv);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     rightBox.append(secondInnerRightBox);
+
+
 
     let thirdInnerRightBox=document.createElement('div');
     thirdInnerRightBox.style.display='flex';
@@ -172,12 +239,14 @@ function displayData(arr)
 
     mainBox.append(leftBox,rightBox);
     box.append(topBox,mainBox);
+
+
 }
 displayData(arr);
 
 
 
- //empty cart function
+ //empty cart 
 async function emptyCart(uiAfterRemovingProduct)
 {
     try {
