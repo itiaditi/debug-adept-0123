@@ -961,5 +961,33 @@
       "price": 38,
       "quantity": "250 g",
       "id": "60"}
+  ],
+  "superAdmin":[{
+    "userName":"admin",
+    "passWord":"admin"
+  }],
+  "customer":[{
+"name":"Aditi",
+"email":"aditi@gmail.com",
+"password":"qwerty123"
+  }],
+  "admin":[{
+    "userName":"admin@gmail.com",
+    "password":"admin",
+    "shopId":111
+  }],
+  "cart":[{
+    "id":1,
+    "email":"aditi@gmail.com",
+"product":[{
+  "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-804-748,pr-true,f-auto,q-80/inventory/product/93325143-6e7b-495f-b8c9-c0f395d59d00-baby_apple_shimla.PNG",
+  "productName": "Baby Apple Shimla",
+  "quantity": "1 kg (Approx. 9 - 12 pcs)",
+  "offers": "20",
+  "price": "192",
+  "productId": "2"
+}
+]
+  }
   ]
   }
