@@ -1,28 +1,164 @@
-body{
-    overflow: hidden;
-  }
-  #container{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(245,241,247);
-    margin: 0px;
-    padding: 0px;
-   
-  }
-  #navCart{
-    width: 100vw;
-    height: 60px;
-    background-color: rgb(84,15,121);
-    display: flex;
-    justify-content: center;
-  }
-  #navCart p{
-    color: white;
-    font-family: "ZeptoNorms - 400";
-    margin-top: 25px;
-  }
-  #navCart img{
-    margin-top: 20px;
-    margin-right: 10px;
-    height: 50px;
-  }
+/* body {
+  overflow: hidden;
+} */
+#container {
+  width: 100vw;
+  /* height: 100vh; */
+  background-color: rgb(245, 241, 247);
+  margin: 0px;
+  padding: 0px;
+}
+#navCart {
+  width: 100vw;
+  height: 60px;
+  background-color: rgb(84, 15, 121);
+  display: flex;
+  justify-content: center;
+}
+#navCart p {
+  color: white;
+  font-family: "ZeptoNorms - 400";
+  margin-top: 25px;
+}
+#navCart img {
+  margin-top: 20px;
+  margin-right: 10px;
+  height: 50px;
+}
+
+#topBox {
+  /* border: 1px solid green; */
+  width: 65%;
+  height: 10vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#firstInnerBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+  /* border: 1px solid teal; */
+}
+
+#firstInnerBox pre {
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+}
+#priceDiv {
+  display: flex;
+  width: 65%;
+  height: 30px;
+  border-radius: 7px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(218, 244, 229);
+  /* border: 1px solid; */
+}
+
+#discountHeadingTop {
+  font-weight: bold;
+  margin: 0px;
+}
+
+#discountText {
+  margin: 9px 0px 0px 10px;
+}
+
+#emptyBtnDiv {
+  height: 35%;
+  border: 1px solid rgb(255, 50, 105);
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#emptyBtn {
+  border: none;
+  color: rgb(255, 50, 105);
+  background-color: white;
+}
+
+#mainBox {
+  /* border: 1px solid green; */
+  width: 65%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+#leftBox {
+  height: 100%;
+  width: 58%;
+  border: 1px dased red;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#rightBox {
+  height: 100%;
+  width: 40%;
+  border: 1px dased red;
+}
+
+#firstInnerRightBox {
+  height: 10vh;
+  display: flex;
+  /* align-items: center; */
+}
+
+#firstInnerRightBox img {
+  border-radius: 50%;
+}
+#firstInnerRightBox p {
+  font-weight: bold;
+  margin: 25px 0px 0px 0px;
+}
+
+#rightBox > div {
+  width: 100%;
+  /* height: 20vh; */
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 10px;
+}
+
+#secondInnerRightBox,
+#thirdInnerRightBox {
+  height: 20vh;
+}
+
+#secondInnerRightBox > div {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto 0px auto;
+  height: auto;
+}
+#secondInnerRightBox p,
+pre {
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  color: grey;
+  font-family: "Garamond";
+}
+#secondInnerRightBox h3 {
+  margin: 15px 0px 10px 0px;
+}
+
+#thirdInnerRightBox {
+  display: flex;
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 20vh;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 10px;
+}
