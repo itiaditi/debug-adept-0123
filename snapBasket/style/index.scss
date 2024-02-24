@@ -262,8 +262,8 @@ img {
    &-block {
       position: fixed;
       top: 0;
-      right: -40%;
-      width: 40%;
+      right: -30%;
+      width: 30%;
       height: 100%;
       z-index: 10;
       overflow: hidden;
@@ -294,17 +294,21 @@ img {
       transform: translateY(50px);
       height: auto;
       padding: 0.65rem 1.25rem;
-      border: none;
+      border: 2px solid grey;
       outline: none;
       border-radius: 0.25rem;
       color: var(--color-black);
       background-color: var(--color-light);
-
+      
       &::-webkit-search-decoration,
       &::-webkit-search-cancel-button {
          display: none;
          visibility: hidden;
       }
+      &:focus {
+      border:2px solid #54B227;
+      outline: none;
+       }
    }
 }
 .cardsContainerWrapper{
@@ -324,6 +328,7 @@ img {
    padding: 10px;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    gap: 20px;
    p{
       font-weight: 100;
@@ -346,11 +351,11 @@ img {
    }
    .offer{
       width: 49px;
-      padding: 4px;
+      // padding: 4px;
       background-color: #54B227;
       color: white;
       transform: translate(-10px,-10px);
-      font-size: 12px;
+      font-size: 13px;
       border-bottom-right-radius: 10px;
    }
 }
@@ -486,7 +491,13 @@ img {
  #totalQuantity {
    transform: translate(-23px,-6px);
  }
-
+ .category {
+   display: grid;
+   grid-template-columns: repeat(8,1fr);
+   gap: 20px;
+   margin: 50px;
+   cursor: pointer ;
+ }
 
 //  .quantity-control {
 //    display: flex;

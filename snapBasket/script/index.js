@@ -108,23 +108,36 @@ function mediaManagement() {
 let totalQuantity = 0;
 
 // let totalQuantity = 0;
-function addToCart(){
+function incrementQuantity(button) {
+   const card = button.closest('.card1');
+   const quantitySpan = card.querySelector('.quantity');
+   // const addToCartDiv = card.querySelector('.addToCart');
+   let quantity = parseInt(quantitySpan.textContent);
+   quantity++;
+   quantitySpan.textContent = quantity;
    
+   totalQuantity++;
+   const totalQuantitySpan = document.getElementById("totalQuantity");
+   totalQuantitySpan.textContent = totalQuantity;
+   // addToCartDiv.innerHTML = `<button onclick="decrementQuantity(this)">-</button>
+   // <span class="quantity">1</span>
+   // <button onclick="incrementQuantity(this)">+</button>`
+
 }
 
-function incrementQuantity(button) {
+function addToMyCart(button) {
     const card = button.closest('.card1');
     const quantitySpan = card.querySelector('.quantity');
     const addToCartDiv = card.querySelector('.addToCart');
-    let quantity = parseInt(quantitySpan.textContent);
-    quantity++;
-    quantitySpan.textContent = quantity;
+   //  let quantity = parseInt(quantitySpan.textContent);
+   //  quantity++;
+   //  quantitySpan.textContent = quantity;
     
     totalQuantity++;
     const totalQuantitySpan = document.getElementById("totalQuantity");
     totalQuantitySpan.textContent = totalQuantity;
     addToCartDiv.innerHTML = `<button onclick="decrementQuantity(this)">-</button>
-    <span class="quantity">${quantity}</span>
+    <span class="quantity">1</span>
     <button onclick="incrementQuantity(this)">+</button>`
 
 }
@@ -144,7 +157,7 @@ function decrementQuantity(button) {
         
         if (quantity === 0) {
             const addToCartDiv = card.querySelector('.addToCart');
-            addToCartDiv.innerHTML = '<button onclick="incrementQuantity(this)">Add</button>';
+            addToCartDiv.innerHTML = '<button onclick="addToMyCart(this)">Add</button>';
         }
     }
 }
@@ -162,7 +175,8 @@ function decrementQuantity(button) {
 // }
 
 const searchByInput = document.getElementsByClassName("bx-search");
-const urlAllRecipes = `https://debug-adept-0123.onrender.com/Fruits`;
+const urlFruits = `https://debug-adept-0123.onrender.com/Fruits`;
+const cartUrl = 'https://debug-adept-0123.onrender.com/cart';
 let page = 1;
 
 function handleKeyPress(event) {
@@ -173,15 +187,15 @@ function handleKeyPress(event) {
 
 function searchData(){
     let inputVal = searchByInput.value;
+    console.log()
     let query =`?productName_like=${inputVal}`
-    let url = `${urlAllRecipes}${query}`
+    let url = `${urlFruits}${query}`
     if(!inputVal) return;
     fetchData(page,url)
 }
 
 let mainSection = document.getElementById("cardsContainerWrapper");
-// let getRecipesBtn = document.getElementById("fetch-recipes");
-// let totalResult = document.querySelector(".total-results");
+
 
 function creatCard(obj){
    let card;
@@ -195,9 +209,7 @@ function creatCard(obj){
          <div class="price">
             <h4>₹${obj.price}</h4>
             <div class="addToCart">
-                <button onclick="decrementQuantity(this)">-</button>
-                <span class="quantity">0</span>
-                <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToMyCart(this)" data-id=${obj.id}>Add</button>
             </div>
          </div>
       </div>
@@ -205,6 +217,7 @@ function creatCard(obj){
 }
   else{
    card = `<div class="card1">
+   <div class="offer"></div>
       <div class="cardImage"><img src=${obj.imageLink} alt="img"></div>
       <div class="cardContent">
          <h4>${obj.productName}</h4>
@@ -212,22 +225,45 @@ function creatCard(obj){
          <div class="price">
             <h4>₹${obj.price}</h4>
             <div class="addToCart">
-                <button onclick="decrementQuantity(this)">-</button>
-                <span class="quantity">0</span>
-                <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToMyCart(this)" data-id=${obj.id}>Add</button>
             </div>
          </div>
       </div>
  </div>`
+//  <button onclick="decrementQuantity(this)">-</button>
+//                 <span class="quantity">0</span>
+//                 <button onclick="incrementQuantity(this)">+</button>
   }
  return card;
  }
  
+ async function addToCart1(id,data){
+   let obj = data.find(item => item.id === id);
+   let res = await fetch(`${cartUrl}`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    });
+    let data1 = await res.json();
+    console.log(data1);
+   //  fetchData();
+ }
  function appendData(data){
+
    data.forEach(element => {
      mainSection.innerHTML += creatCard(element)
    });
+   let addToCart = document.getElementsByClassName("addToCart");
+   for(let item of addToCart){
+      item.addEventListener("click",(e)=>{
+         e.preventDefault();
+         addToCart1(e.target.dataset.id,data);
+      })
+   }
  }
+
  window.addEventListener("scroll",()=>{
      
      let clientHeight = document.documentElement.clientHeight;
@@ -243,7 +279,7 @@ function creatCard(obj){
  })
   async function fetchData(page,query=""){
      try{
-         let res = await fetch(`${urlAllRecipes}?_page=${page}&_limit=10${query}`);
+         let res = await fetch(`${urlFruits}?_page=${page}&_limit=10${query}`);
          let data = await res.json();
          console.log(data);
          appendData(data)

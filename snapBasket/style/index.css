@@ -252,8 +252,8 @@ img {
 .search-block {
   position: fixed;
   top: 0;
-  right: -40%;
-  width: 40%;
+  right: -30%;
+  width: 30%;
   height: 100%;
   z-index: 10;
   overflow: hidden;
@@ -281,7 +281,7 @@ img {
   transform: translateY(50px);
   height: auto;
   padding: 0.65rem 1.25rem;
-  border: none;
+  border: 2px solid grey;
   outline: none;
   border-radius: 0.25rem;
   color: var(--color-black);
@@ -290,6 +290,10 @@ img {
 .search-input::-webkit-search-decoration, .search-input::-webkit-search-cancel-button {
   display: none;
   visibility: hidden;
+}
+.search-input:focus {
+  border: 2px solid #54B227;
+  outline: none;
 }
 
 .cardsContainerWrapper {
@@ -310,6 +314,7 @@ img {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
 }
 .card1 p {
@@ -332,11 +337,10 @@ img {
 }
 .card1 .offer {
   width: 49px;
-  padding: 4px;
   background-color: #54B227;
   color: white;
   transform: translate(-10px, -10px);
-  font-size: 12px;
+  font-size: 13px;
   border-bottom-right-radius: 10px;
 }
 
@@ -454,4 +458,12 @@ img {
 
 #totalQuantity {
   transform: translate(-23px, -6px);
+}
+
+.category {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+  margin: 50px;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
