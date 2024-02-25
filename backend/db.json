@@ -1003,21 +1003,30 @@
     {
       "product": [
         {
+          "id": "13",
+          "price": "28",
+          "offers": "22",
+          "quantity": "1 pc (Approx. 450g - 500g)",
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8d7ce258-8e61-4fd6-8795-cfc159d8cf40.jpeg",
+          "productName": "Coconut",
+          "eachProductCount": "1"
+        },
+        {
+          "id": "23",
+          "price": "163",
+          "offers": "6",
+          "quantity": "100 g",
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-1081-1080,pr-true,f-auto,q-80/cms/product_variant/7ef301c3-7150-4afd-91c6-ceaa4a1da72a.jpeg",
+          "productName": "Khari Foods Very Bery Crunch Dried",
+          "eachProductCount": "1"
+        },
+        {
           "id": "11",
           "price": "155",
           "offers": "20",
           "quantity": "1 kg",
           "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/fb65ab4a-23a2-4468-b7a2-756895f11e58-Photo.jpeg",
           "productName": "Pomegranate Regular",
-          "eachProductCount": 2
-        },
-        {
-          "id": "12",
-          "price": "249",
-          "offers": "19",
-          "quantity": "1 kg (Approx. 6 - 7 pcs)",
-          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-225-225,pr-true,f-auto,q-80/inventory/product/e5acda9e-0063-49ad-9372-dab68667fa1b-download_(2).jpg",
-          "productName": "Apple Shimla",
           "eachProductCount": "1"
         }
       ],

@@ -6,14 +6,46 @@
     <meta href="#" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="../style/product.css">
-
-
-
+    <link rel="icon" href="./media/snap (1).png">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <title>snapBasket</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/2b5ae2b1ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/snapBasket/style/cart.css" />
     <title>Document</title>
     
 </head>
 
 <body>
+
+
+    <!-- navbar  -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+           <img src="../media/snap .png" alt="logo" class="brand ">
+           <div class="burger" id="burger">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+           </div>
+           <span class="overlay"></span>
+           <div class="menu" id="menu">
+              <ul class="menu-inner">
+                 <li class="menu-item"><a class="menu-link" href="../index.html">Home</a></li>
+                 <li class="menu-item"><a class="menu-link" href="#">About</a></li>
+                 <li class="menu-item"><a class="menu-link" href="#">Login <i class="fa-solid fa-user"></i></a></li>
+                 <li class="menu-item"><a class="menu-link" href="./cart.html" id="cart">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+              </ul>
+           </div>
+           <span><i class="bx bx-search search-toggle" onkeypress="handleKeyPress(event)"></i></span>
+           <div class="search-block">
+              <form class="search-form">
+                 <span><i class="bx bx-arrow-back search-cancel"></i></span>
+                 <input type="search" name="search" class="search-input" placeholder="Search here...">
+              </form>
+           </div>
+        </nav>
+     </header>
     <!--category side-->
     <div class="main-container">
         <div class="category">

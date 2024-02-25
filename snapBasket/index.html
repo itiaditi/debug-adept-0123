@@ -7,11 +7,15 @@
     <link rel="icon" href="./media/snap (1).png">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <title>snapBasket</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
   </head>
   <body>
+
+
+   <!-- navbar  -->
       <header class="header" id="header">
         <nav class="navbar container">
-           <!-- <a href="./index.html" class="brand">Brand</a> -->
            <img src="./media/snap .png" alt="logo" class="brand ">
            <div class="burger" id="burger">
               <span class="burger-line"></span>
@@ -23,9 +27,8 @@
               <ul class="menu-inner">
                  <li class="menu-item"><a class="menu-link" href="#">Home</a></li>
                  <li class="menu-item"><a class="menu-link" href="#">About</a></li>
-                 <li class="menu-item"><a class="menu-link" href="#">Login <i class="fa-solid fa-user"></i></a></li>
+                 <li class="menu-item" id="openModal"><a class="menu-link" href="#">Login <i class="fa-solid fa-user"></i></a></li>
                  <li class="menu-item"><a class="menu-link" href="#" id="cart">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
-                 <!-- <li class="menu-item"><a class="menu-link" href="#">Support</a></li> -->
               </ul>
            </div>
            <span><i class="bx bx-search search-toggle" onkeypress="handleKeyPress(event)"></i></span>
@@ -38,9 +41,12 @@
         </nav>
      </header>
 
-<!-- Banner -->
 
-     <div class="banner1">
+<div id="mainBody">
+
+   <!-- Banner -->
+
+   <div class="banner1">
       <img src="./media/banner1.webp" alt="banner">
      </div>
 
@@ -78,7 +84,7 @@
 
 <!-- product by category -->
 <div class="category">
-   <a href="/debug-adept-0123/snapBasket/html/product.html" style="grid-column: span 2;"><img src="./media/4529e4a6-53c8-47c0-9386-bf6da3bbc2d6.webp" alt="categoryimg" class="categoryImg"></a>
+   <a href="./html/product.html" style="grid-column: span 2;"><img src="./media/4529e4a6-53c8-47c0-9386-bf6da3bbc2d6.webp" alt="categoryimg" class="categoryImg"></a>
    <img src="./media/9ab5de50-8c4f-4491-8352-763a8337b59cAttaRiceOilDals.webp" alt="categoryimg" class="categoryImg">
    <img src="./media/img3.webp" alt="categoryimg" class="categoryImg">
    <img src="./media/img4.webp" alt="categoryimg" class="categoryImg">
@@ -107,6 +113,50 @@
 
      <div class="cardsContainerWrapper" id="cardsContainerWrapper">
      </div>
+
+
+
+
+
+
+</div>
+
+     <!-- login modal  -->
+     <div id="loginModal" class="modal">
+      <div class="form-structor">
+        <div class="signup">
+          <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+          <div class="form-holder">
+            <input type="text" class="input" placeholder="Name" />
+            <input type="email" class="input" placeholder="Email" />
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+          <button class="submit-btn">Sign up</button>
+        </div>
+        <div class="login slide-up">
+          <div class="center">
+            <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+            <div class="form-holder">
+              <input
+                id="username"
+                type="email"
+                class="input"
+                placeholder="Email"
+              />
+              <input
+                id="password"
+                type="password"
+                class="input"
+                placeholder="Password"
+              />
+            </div>
+            <button id="loginForm" class="submit-btn">Log in</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
      <script src="https://kit.fontawesome.com/2b5ae2b1ae.js" crossorigin="anonymous"></script>
   </body>
   </html>
