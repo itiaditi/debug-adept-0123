@@ -107,9 +107,41 @@ function displayData(productArr, totalItem, totalAmount) {
     btnBox.append(decBtn, quantityP, incBtn);
     parentBox.append(imageBox, middleBox, btnBox);
     leftBox.append(parentBox);
+
+    let placeOrder=document.getElementById('thirdInnerRightBox');
+    placeOrder.addEventListener('click',afterOrderPlace);
   });
 
   updateItemTotal(productArr);
+}
+
+//ui after order placing
+function afterOrderPlace()
+{
+  let box = document.getElementById("container");
+  box.innerHTML = "";
+  let uiBox = document.createElement("div");
+  box.style.display="flex";
+  box.style.backgroundColor="white"
+  box.style.justifyContent="center";
+  box.style.alignItems="center";
+  uiBox.style.width = "30vw";
+  uiBox.style.height = "40vh";
+  uiBox.style.display="flex";
+  uiBox.style.flexDirection="column";
+  uiBox.style.justifyContent="center";
+  uiBox.style.alignItems="center";
+  uiBox.style.borderRadius="20px";
+  uiBox.style.background="rgb(255,50,105)";
+  uiBox.style.color="white";
+  uiBox.style.boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px";
+  let successHeading=document.createElement('h4');
+  successHeading.innerText='Order Placed Successfully';
+  let deliverText=document.createElement('h3');
+  deliverText.innerText="Product will deliver within 12 minutes"
+
+uiBox.append(successHeading,deliverText) ;
+ box.append(uiBox);
 }
 
 // Decrement cart product
@@ -237,7 +269,7 @@ function uiAfterRemovingProduct() {
 
   productBrowseBtn.addEventListener("click", () => {
     // Replace with home url
-    window.location.href = "http://www.w3schools.com";
+    window.location.href = "http://127.0.0.1:5500/snapBasket/index.html";
   });
 
   emptyText.style.display = "flex";

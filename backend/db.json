@@ -999,6 +999,30 @@
           "eachProductCount": "1"
         }
       ]
+    },
+    {
+      "product": [
+        {
+          "id": "11",
+          "price": "155",
+          "offers": "20",
+          "quantity": "1 kg",
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/fb65ab4a-23a2-4468-b7a2-756895f11e58-Photo.jpeg",
+          "productName": "Pomegranate Regular",
+          "eachProductCount": 2
+        },
+        {
+          "id": "12",
+          "price": "249",
+          "offers": "19",
+          "quantity": "1 kg (Approx. 6 - 7 pcs)",
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-225-225,pr-true,f-auto,q-80/inventory/product/e5acda9e-0063-49ad-9372-dab68667fa1b-download_(2).jpg",
+          "productName": "Apple Shimla",
+          "eachProductCount": "1"
+        }
+      ],
+      "totalItem": "3",
+      "id": "indrani@gmail.com"
     }
   ]
 }
