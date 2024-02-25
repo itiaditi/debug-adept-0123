@@ -118,6 +118,7 @@ function mediaManagement() {
 
 // let totalQuantity = 0;
 
+
 //ip
 // let totalQuantity = 0;
 // function incrementQuantity(button) {

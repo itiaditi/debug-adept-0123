@@ -340,9 +340,18 @@ img {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
+      .increase{
+         background-color: rgb(245, 79, 79);
+         color: white;
+         border-radius: 5px ;
+         font-size: 1rem;
+         button{
+            color: white;
+            font-size: 1rem;
+         }
+      }
       button{
-         border: 1px solid red;
+         border: 1px solid rgb(245, 79, 79);
          border-radius: 5px;
          color: red;
          padding: 10px;
