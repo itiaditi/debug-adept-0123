@@ -4,6 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/snapBasket/style/cart.css" />
   </head>
-  <body></body>
+  <style></style>
+  <body>
+    <div id="container">
+      <!-- Delivering to you in 12 mins section -->
+      <div id="navCart">
+        <img
+          src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/9.1.0/images/cart/delivery-banner-icon.svg"
+          alt=""
+        />
+        <p>Delivering to you in <b>12 mins</b></p>
+      </div>
+
+      <!-- Empty Cart section  -->
+      <div id="topBox">
+        <div id="firstInnerBox">
+          <pre>  Cart(<span id="cartHeading"></span> Items)</pre>
+
+          <div id="priceDiv">
+            <h3>₹<span id="discountHeadingTop"></span></h3>
+            <p id="discountText">saved on this order</p>
+          </div>
+        </div>
+
+        <!-- empty button  -->
+        <div id="emptyBtnDiv">
+          <button id="emptyBtn">Empty Cart</button>
+        </div>
+      </div>
+
+      <!-- MainBox -->
+      <div id="mainBox">
+        <div id="leftBox"></div>
+        <div id="rightBox">
+          <div id="firstInnerRightBox">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIWeQ3i6AWW1Bd0LhRJMjz0VrO_SUXNGbj2G52moiTfNwqYG7"
+              alt="logo"
+            />
+            <p>Avail Offers / Coupons</p>
+          </div>
+          <div id="secondInnerRightBox">
+            <div>
+              <h4>Item Total</h4>
+
+              <h4><del id="actualTotal"></del> <span id="itemPrice"></span></h4>
+            </div>
+            <div>
+              <p>Handling Charge</p>
+              <pre><del>₹15</del> ₹5.49</pre>
+            </div>
+            <div>
+              <p>Delivery Fee</p>
+              <pre><del>₹25</del> ₹0</pre>
+            </div>
+            <div>
+              <h4>To Pay</h4>
+              <h4 id="toPayPrice"></h4>
+            </div>
+          </div>
+          <div id="thirdInnerRightBox">
+            Place Order
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/snapBasket/script/cart.js"></script>
 </html>

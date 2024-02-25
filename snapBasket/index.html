@@ -3,9 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="icon" href="./media/snap (1).png">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <title>snapBasket</title>
   </head>
   <body>
-    <div id="container"></div>
+      <header class="header" id="header">
+        <nav class="navbar container">
+           <!-- <a href="./index.html" class="brand">Brand</a> -->
+           <img src="./media/snap .png" alt="logo" class="brand ">
+           <div class="burger" id="burger">
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+              <span class="burger-line"></span>
+           </div>
+           <span class="overlay"></span>
+           <div class="menu" id="menu">
+              <ul class="menu-inner">
+                 <li class="menu-item"><a class="menu-link" href="#">Home</a></li>
+                 <li class="menu-item"><a class="menu-link" href="#">About</a></li>
+                 <li class="menu-item"><a class="menu-link" href="#">Login <i class="fa-solid fa-user"></i></a></li>
+                 <li class="menu-item"><a class="menu-link" href="#" id="cart">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                 <!-- <li class="menu-item"><a class="menu-link" href="#">Support</a></li> -->
+              </ul>
+           </div>
+           <span><i class="bx bx-search search-toggle" onkeypress="handleKeyPress(event)"></i></span>
+           <div class="search-block">
+              <form class="search-form">
+                 <span><i class="bx bx-arrow-back search-cancel"></i></span>
+                 <input type="search" name="search" class="search-input" placeholder="Search here...">
+              </form>
+           </div>
+        </nav>
+     </header>
+
+<!-- Banner -->
+
+     <div class="banner1">
+      <img src="./media/banner1.webp" alt="banner">
+     </div>
+
+
+<!-- big cards crosal image -->
+<section>
+   <div id="cCarousel">
+     <div class="arrow" id="prev"><i class="fa-solid fa-chevron-left"></i></div>
+     <div class="arrow" id="next"><i class="fa-solid fa-chevron-right"></i></div>
+ 
+     <div id="carousel-vp">
+       <div id="cCarousel-inner">
+ 
+         <article class="cCarousel-item">
+           <img src="./media/mango.webp"></img>
+         </article>
+ 
+         <article class="cCarousel-item">
+           <img src="./media/nuts.webp" alt="Moon">
+         </article>
+  <article class="cCarousel-item">
+           <img src="./media/vim.webp" alt="Moon">
+         </article>
+  <article class="cCarousel-item">
+           <img src="./media/cream.webp" alt="Moon">
+         </article>
+  <article class="cCarousel-item">
+           <img src="./media/shampoo.webp" alt="Moon">
+  </article>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+<!-- product by category -->
+<div class="category">
+   <img src="./media/4529e4a6-53c8-47c0-9386-bf6da3bbc2d6.webp" alt="categoryimg" class="categoryImg" style="grid-column: span 2;">
+   <img src="./media/9ab5de50-8c4f-4491-8352-763a8337b59cAttaRiceOilDals.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img3.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img4.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img5.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img6.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img7.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img8.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img9.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img10.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img11.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img12.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img13.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img14.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img15.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img16.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img17.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img18.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img19.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img20.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img21.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img22.webp" alt="categoryimg" class="categoryImg">
+   <img src="./media/img23.webp" alt="categoryimg" class="categoryImg">
+</div>
+
+     <!-- card  containers -->
+
+     <div class="cardsContainerWrapper" id="cardsContainerWrapper">
+     </div>
+     <script src="https://kit.fontawesome.com/2b5ae2b1ae.js" crossorigin="anonymous"></script>
   </body>
-</html>
+  </html>
+  <script src="./script/index.js"></script>
