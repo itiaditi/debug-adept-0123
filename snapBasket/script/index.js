@@ -136,9 +136,9 @@ function addToMyCart(button) {
     totalQuantity++;
     const totalQuantitySpan = document.getElementById("totalQuantity");
     totalQuantitySpan.textContent = totalQuantity;
-    addToCartDiv.innerHTML = `<button onclick="decrementQuantity(this)">-</button>
+    addToCartDiv.innerHTML = `<div class="increase"><button onclick="decrementQuantity(this)">-</button>
     <span class="quantity">1</span>
-    <button onclick="incrementQuantity(this)">+</button>`
+    <button onclick="incrementQuantity(this)">+</button></div>`
 
 }
 
