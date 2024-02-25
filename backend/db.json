@@ -972,9 +972,9 @@
   "customer": [
     {
       "name": "Aditi",
-      "email": "aditi@gmail.com",
-      "password": "qwerty123",
-      "token": "baow5reetoclsyfdf8d"
+      "id": "aditi@gmail.com",
+      "password": "qwerty123"
+
     }
   ],
   "admin": [
@@ -1009,7 +1009,7 @@
           "quantity": "1 pc (Approx. 450g - 500g)",
           "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/8d7ce258-8e61-4fd6-8795-cfc159d8cf40.jpeg",
           "productName": "Coconut",
-          "eachProductCount": "1"
+          "eachProductCount": "13"
         },
         {
           "id": "23",
@@ -1027,10 +1027,11 @@
           "quantity": "1 kg",
           "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/fb65ab4a-23a2-4468-b7a2-756895f11e58-Photo.jpeg",
           "productName": "Pomegranate Regular",
-          "eachProductCount": "1"
+          "eachProductCount": 2
         }
       ],
-      "totalItem": "3",
+      "totalItem": "16",
+      "totalAmount": null,
       "id": "indrani@gmail.com"
     }
   ]
