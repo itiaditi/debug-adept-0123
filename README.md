@@ -56,7 +56,7 @@ User can add product from the product page into their cart.
 Home Page (Landing page)
 
 # Website Video
-https://youtu.be/pckxe0KBYwA?si=2UIsFrQ98HnWyHiw
+[https://youtu.be/pckxe0KBYwA?si=2UIsFrQ98HnWyHiw](https://youtu.be/ucHCX0I8M-s)
 
 
 # Website snapshot
