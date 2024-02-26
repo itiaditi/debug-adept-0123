@@ -64,9 +64,22 @@ Home Page (Landing page)
 ## Header / NavBar
 ![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/528f8d2c-1649-4a21-8d02-a636fcf3508d)
 
+## Landing page
+![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/247f8a28-cec0-429b-b0e1-72d83816a089)
+![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/21858837-70bb-4c14-ac76-85d9ed80fcb4)
+
+
+
 ## Login/ SignUp
 ![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/f26481e0-868e-4644-9cc1-65e285242a73)
 
 
 ## Cart 
+![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/2755c107-9a93-45a3-849e-eab094a2ab79)
+
 ![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/cb325a69-ecad-4d17-a968-67705131d150)
+
+## Product Page
+
+![image](https://github.com/itiaditi/debug-adept-0123/assets/154405714/a7da5a77-cfbf-4374-a0ca-312a040aefe9)
+
