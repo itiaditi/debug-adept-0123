@@ -1,5 +1,5 @@
-# Masai construct week project Unit 3
-Hello and welcome to our JS204 Construct Week Project! Over the span of five days, our team of four members worked collaboratively to craft this project, which consists of two distinct parts.
+# Masai construct week project Unit 4
+Hello and welcome to our JS204 Construct Week Project! Over the span of five days, our team of four members worked collaboratively to craft this project.
 # Team Members
 
 Aditi Dhiman
