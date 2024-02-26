@@ -1,160 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta href="#" charset="UTF-8">
-    <meta href="#" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="../style/product.css">
-    <link rel="icon" href="./media/snap (1).png">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+  <head>
+    <meta href="#" charset="UTF-8" />
+    <meta
+      href="#"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style/product.css" />
+    <link rel="icon" href="../media/snap (1).png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
     <title>snapBasket</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://kit.fontawesome.com/2b5ae2b1ae.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2b5ae2b1ae.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/snapBasket/style/cart.css" />
     <title>Document</title>
-    
-</head>
+  </head>
 
-<body>
-
-
+  <body>
     <!-- navbar  -->
     <header class="header" id="header">
-        <nav class="navbar container">
-           <img src="../media/snap .png" alt="logo" class="brand ">
-           <div class="burger" id="burger">
-              <span class="burger-line"></span>
-              <span class="burger-line"></span>
-              <span class="burger-line"></span>
-           </div>
-           <span class="overlay"></span>
-           <div class="menu" id="menu">
-              <ul class="menu-inner">
-                 <li class="menu-item"><a class="menu-link" href="../index.html">Home</a></li>
-                 <li class="menu-item"><a class="menu-link" href="#">About</a></li>
-                 <li class="menu-item"><a class="menu-link" href="#">Login <i class="fa-solid fa-user"></i></a></li>
-                 <li class="menu-item"><a class="menu-link" href="./cart.html" id="cart">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
-              </ul>
-           </div>
-           <span><i class="bx bx-search search-toggle" onkeypress="handleKeyPress(event)"></i></span>
-           <div class="search-block">
-              <form class="search-form">
-                 <span><i class="bx bx-arrow-back search-cancel"></i></span>
-                 <input type="search" name="search" class="search-input" placeholder="Search here...">
-              </form>
-           </div>
-        </nav>
-     </header>
+      <nav class="navbar container">
+        <img src="../media/snap .png" alt="logo" class="brand" />
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" href="../index.html">Home</a>
+            </li>
+            <li class="menu-item"><a class="menu-link" href="#">About</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="#"
+                >Login <i class="fa-solid fa-user"></i
+              ></a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="./cart.html" id="cart"
+                >Cart <i class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <span
+          ><i
+            class="bx bx-search search-toggle"
+            onkeypress="handleKeyPress(event)"
+          ></i
+        ></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
     <!--category side-->
     <div class="main-container">
-        <div class="category">
-            <div id="all" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-614-406,pr-true,f-auto,q-80/cms/sub_category/d7af2fc0-df96-430a-8393-1a96cb9959e5.png"
-                    alt="Basket" />
-                <a href="#" class="text">All</a>
-            </div>
-            <div id="Fresh-Fruits" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-490-490,pr-true,f-auto,q-80/cms/sub_category/1131bbae-c3b2-4aab-8864-fbc9069112ab.jpeg"
-                    alt="Fresh-fruits" />
-                <a href="#" class="text">Fresh Fruits</a>
-            </div>
-            <div id="Fresh-Vegetables" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/inventory/subcategory/b8c5ef63-3e40-4cdc-814b-e14de2e60780-Onion.png"
-                    alt="Fresh-Vegetables" />
-                <a href="#" class="text">Fresh Vegetables</a>
-            </div>
-            <div id="Exotics-Premium" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Blueberry%20(1).png"
-                    alt="Exotics & Premium" />
-                <a href="#" class="text">Exotics &amp; Premium</a>
-            </div>
-            <div id="Leafy-Herbs" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Spinach%20(1).png"
-                    alt="Leafy-Herbs" />
-                <a href="#" class="text">Leafy, Herbs &amp; Seasonings</a>
-            </div>
-            <div id="Flowers-Leaves" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Marigold%20&%20Rose%20(1).png"
-                    alt="Flowers-Leaves" />
-                <a href="#" class="text">Flowers &amp; Leaves</a>
-            </div>
-            <div id="Cut-Sprouts" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Pomegranate%20(1).png"
-                    alt="Cut-Sprouts" />
-                <a href="#" class="text">Cuts &amp; Sprouts</a>
-            </div>
-            <div id="Organics-Hydroponics" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Organic%20.png"
-                    alt="Organics-Hydroponics" />
-                <a href="#" class="text">Organics &amp; Hydroponics</a>
-            </div>
-            <div id="Juices-Salads" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Juice%20Bottle%20(1).png"
-                    alt="Juices-Salads" />
-                <a href="#" class="text">Juices, Salads &amp; Dips</a>
-            </div>
-            <div id="Dried-Fruits" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Dates%20(1).png"
-                    alt="Dried-Fruits" />
-                <a href="#" class="text">Dried Fruits</a>
-            </div>
-            <div id="Gardening" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-120-120,pr-true,f-auto,q-80/cms/sub_category/0934fa21-9e51-49b1-9c35-5f333c601b81.jpeg"
-                    alt="Gardening" />
-                <a href="#" class="text">Gardening</a>
-            </div>
-            <div id="Combos" class="product-cateogry">
-
-
-                <img class="fit-picture"
-                    src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/inventory/subcategory/2e442da2-9218-49c5-9875-41abdd9d2210-FNV.png"
-                    alt="Combos" />
-                <a href="#" class="text">Combos</a>
-            </div>
+      <div class="category">
+        <div id="all" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-614-406,pr-true,f-auto,q-80/cms/sub_category/d7af2fc0-df96-430a-8393-1a96cb9959e5.png"
+            alt="Basket"
+          />
+          <a href="#" class="text">All</a>
         </div>
+        <div id="Fresh-Fruits" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-490-490,pr-true,f-auto,q-80/cms/sub_category/1131bbae-c3b2-4aab-8864-fbc9069112ab.jpeg"
+            alt="Fresh-fruits"
+          />
+          <a href="#" class="text">Fresh Fruits</a>
+        </div>
+        <div id="Fresh-Vegetables" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/inventory/subcategory/b8c5ef63-3e40-4cdc-814b-e14de2e60780-Onion.png"
+            alt="Fresh-Vegetables"
+          />
+          <a href="#" class="text">Fresh Vegetables</a>
+        </div>
+        <div id="Exotics-Premium" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Blueberry%20(1).png"
+            alt="Exotics & Premium"
+          />
+          <a href="#" class="text">Exotics &amp; Premium</a>
+        </div>
+        <div id="Leafy-Herbs" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Spinach%20(1).png"
+            alt="Leafy-Herbs"
+          />
+          <a href="#" class="text">Leafy, Herbs &amp; Seasonings</a>
+        </div>
+        <div id="Flowers-Leaves" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Marigold%20&%20Rose%20(1).png"
+            alt="Flowers-Leaves"
+          />
+          <a href="#" class="text">Flowers &amp; Leaves</a>
+        </div>
+        <div id="Cut-Sprouts" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Pomegranate%20(1).png"
+            alt="Cut-Sprouts"
+          />
+          <a href="#" class="text">Cuts &amp; Sprouts</a>
+        </div>
+        <div id="Organics-Hydroponics" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Organic%20.png"
+            alt="Organics-Hydroponics"
+          />
+          <a href="#" class="text">Organics &amp; Hydroponics</a>
+        </div>
+        <div id="Juices-Salads" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Juice%20Bottle%20(1).png"
+            alt="Juices-Salads"
+          />
+          <a href="#" class="text">Juices, Salads &amp; Dips</a>
+        </div>
+        <div id="Dried-Fruits" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/cms/sub_category/Dates%20(1).png"
+            alt="Dried-Fruits"
+          />
+          <a href="#" class="text">Dried Fruits</a>
+        </div>
+        <div id="Gardening" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-120-120,pr-true,f-auto,q-80/cms/sub_category/0934fa21-9e51-49b1-9c35-5f333c601b81.jpeg"
+            alt="Gardening"
+          />
+          <a href="#" class="text">Gardening</a>
+        </div>
+        <div id="Combos" class="product-cateogry">
+          <img
+            class="fit-picture"
+            src="https://cdn.zeptonow.com/production///tr:w-90,ar-500-500,pr-true,f-auto,q-80/inventory/subcategory/2e442da2-9218-49c5-9875-41abdd9d2210-FNV.png"
+            alt="Combos"
+          />
+          <a href="#" class="text">Combos</a>
+        </div>
+      </div>
 
+      <!--product-container-->
 
-
-        <!--product-container-->
-
-        <div class="products" id="product">
-            <h1>All</h1>
-            <div id="card-container">
-                <!--<div class="cards">
+      <div class="products" id="product">
+        <h1>All</h1>
+        <div id="card-container">
+          <!--<div class="cards">
                     <div class="image">
                         <h6>20% Off</h6>
                         <img src="https://cdn.zeptonow.com/production///tr:w-450,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/97e80b7f-49d1-451d-b9bd-e88f9ded7ce9.jpeg"
@@ -249,11 +276,9 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
-
         </div>
+      </div>
     </div>
     <script src="../script/product.js"></script>
-</body>
-
+  </body>
 </html>
