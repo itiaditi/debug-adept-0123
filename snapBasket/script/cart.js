@@ -46,8 +46,8 @@ if (searchToggle && searchCancel) {
 
 
 // get cartEmail from localStorage
-let cartEmail = "indrani@gmail.com";
-// let cartEmail=localStorage.getItem('id');
+// let cartEmail = "indrani@gmail.com";
+let cartEmail=localStorage.getItem("localAccessToken");
 async function getData(cartEmail) {
   try {
     if (!cartEmail) {
@@ -59,7 +59,7 @@ async function getData(cartEmail) {
     let data = await res.json();
     const products = data.product;
     let totalItem = data.totalItem;
-    if (totalItem == 0) {
+    if (totalItem == 0||cartEmail!==data.id) {
       uiAfterRemovingProduct();
     } else {
       displayData(products, totalItem);
@@ -344,7 +344,7 @@ function uiAfterRemovingProduct() {
 
   productBrowseBtn.addEventListener("click", () => {
     // Replace with home url
-    window.location.href = "http://127.0.0.1:5500/snapBasket/index.html";
+    window.location.href = `../index.html`;
   });
 
   emptyText.style.display = "flex";

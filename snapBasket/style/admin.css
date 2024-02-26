@@ -1,0 +1,1749 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#dashboard{
+    display:none;
+}
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+:root {
+	--poppins: 'Poppins', sans-serif;
+	--lato: 'Lato', sans-serif;
+
+	--light: #F9F9F9;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body.dark {
+	--light: #0C0C1E;
+	--grey: #060714;
+	--dark: #FBFBFB;
+}
+
+body {
+	background: var(--grey);
+	overflow-x: hidden;
+}
+
+
+
+
+
+/* SIDEBAR */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	background: var(--light);
+	z-index: 2000;
+	font-family: var(--lato);
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+#sidebar::--webkit-scrollbar {
+	display: none;
+}
+#sidebar.hide {
+	width: 60px;
+}
+#sidebar .brand {
+	font-size: 24px;
+	font-weight: 700;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	color: var(--blue);
+	position: sticky;
+	top: 0;
+	left: 0;
+	background: var(--light);
+	z-index: 500;
+	padding-bottom: 20px;
+	box-sizing: content-box;
+}
+
+img.logo {
+    width: 281px;
+    border-radius: 10px;
+    opacity: 0.8;
+    background: transparent;
+}
+#sidebar .brand .bx {
+	min-width: 60px;
+	display: flex;
+	justify-content: center;
+}
+#sidebar .side-menu {
+	width: 100%;
+	margin-top: 48px;
+}
+#sidebar .side-menu li {
+	height: 48px;
+	background: transparent;
+	margin-left: 6px;
+	border-radius: 48px 0 0 48px;
+	padding: 4px;
+}
+#sidebar .side-menu li:hover {
+	background: var(--grey);
+	position: relative;
+}
+
+#sidebar .side-menu li.active::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: -40px;
+	right: 0;
+	box-shadow: 20px 20px 0 var(--grey);
+	z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	bottom: -40px;
+	right: 0;
+	box-shadow: 20px -20px 0 var(--grey);
+	z-index: -1;
+}
+#sidebar .side-menu li a {
+	width: 100%;
+	height: 100%;
+	background: var(--light);
+	display: flex;
+	align-items: center;
+	border-radius: 48px;
+	font-size: 16px;
+	color: var(--dark);
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+#sidebar .side-menu.top li.active a {
+	color: var(--blue);
+}
+#sidebar.hide .side-menu li a {
+	width: calc(48px - (4px * 2));
+	transition: width .3s ease;
+}
+#sidebar .side-menu li a.logout {
+	color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+	color: var(--blue);
+}
+#sidebar .side-menu li a .bx {
+	min-width: calc(60px  - ((4px + 6px) * 2));
+	display: flex;
+	justify-content: center;
+}
+/* SIDEBAR */
+
+
+
+
+
+/* CONTENT */
+#content {
+	position: relative;
+	width: calc(100% - 280px);
+	left: 280px;
+	transition: .3s ease;
+}
+#sidebar.hide ~ #content {
+	width: calc(100% - 60px);
+	left: 60px;
+}
+
+
+
+
+/* NAVBAR */
+#content nav {
+	height: 56px;
+	background: var(--light);
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	grid-gap: 24px;
+	font-family: var(--lato);
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#content nav::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	bottom: -40px;
+	left: 0;
+	border-radius: 50%;
+	box-shadow: -20px -20px 0 var(--light);
+}
+#content nav a {
+	color: var(--dark);
+}
+#content nav .bx.bx-menu {
+	cursor: pointer;
+	color: var(--dark);
+}
+#content nav .nav-link {
+	font-size: 16px;
+	transition: .3s ease;
+}
+#content nav .nav-link:hover {
+	color: var(--blue);
+}
+#content nav form {
+	max-width: 400px;
+	width: 100%;
+	margin-right: auto;
+}
+#content nav form .form-input {
+	display: flex;
+	align-items: center;
+	height: 36px;
+}
+#content nav form .form-input input {
+	flex-grow: 1;
+	padding: 0 16px;
+	height: 100%;
+	border: none;
+	background: var(--grey);
+	border-radius: 36px 0 0 36px;
+	outline: none;
+	width: 100%;
+	color: var(--dark);
+}
+#content nav form .form-input button {
+	width: 36px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--blue);
+	color: var(--light);
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 0 36px 36px 0;
+	cursor: pointer;
+}
+#content nav .notification {
+	font-size: 20px;
+	position: relative;
+}
+#content nav .notification .num {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--light);
+	background: var(--red);
+	color: var(--light);
+	font-weight: 700;
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#content nav .profile img {
+	width: 36px;
+	height: 36px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+#content nav .switch-mode {
+	display: block;
+	min-width: 50px;
+	height: 25px;
+	border-radius: 25px;
+	background: var(--grey);
+	cursor: pointer;
+	position: relative;
+}
+#content nav .switch-mode::before {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	bottom: 2px;
+	width: calc(25px - 4px);
+	background: var(--blue);
+	border-radius: 50%;
+	transition: all .3s ease;
+}
+#content nav #switch-mode:checked + .switch-mode::before {
+	left: calc(100% - (25px - 4px) - 2px);
+}
+/* NAVBAR */
+
+
+
+
+
+/* MAIN */
+#content main {
+	width: 100%;
+	padding: 36px 24px;
+	font-family: var(--poppins);
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+}
+#content main .head-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
+}
+#content main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: var(--dark);
+}
+#content main .head-title .left .breadcrumb {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+}
+#content main .head-title .left .breadcrumb li {
+	color: var(--dark);
+}
+#content main .head-title .left .breadcrumb li a {
+	color: var(--dark-grey);
+	pointer-events: none;
+}
+#content main .head-title .left .breadcrumb li a.active {
+	color: var(--blue);
+	pointer-events: unset;
+}
+#content main .head-title .btn-download {
+	height: 36px;
+	padding: 0 16px;
+	border-radius: 36px;
+	background: var(--blue);
+	color: var(--light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 10px;
+	font-weight: 500;
+}
+
+
+
+
+#content main .box-info {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	grid-gap: 24px;
+	margin-top: 36px;
+}
+#content main .box-info li {
+	padding: 24px;
+	background: var(--light);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	grid-gap: 24px;
+}
+#content main .box-info li .bx {
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#content main .box-info li:nth-child(1) .bx {
+	background: var(--light-blue);
+	color: var(--blue);
+}
+#content main .box-info li:nth-child(2) .bx {
+	background: var(--light-yellow);
+	color: var(--yellow);
+}
+#content main .box-info li:nth-child(3) .bx {
+	background: var(--light-orange);
+	color: var(--orange);
+}
+#content main .box-info li .text h3 {
+	font-size: 24px;
+	font-weight: 600;
+	color: var(--dark);
+}
+#content main .box-info li .text p {
+	color: var(--dark);	
+}
+
+
+
+
+
+#content main .table-data {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+	margin-top: 24px;
+	width: 100%;
+	color: var(--dark);
+}
+#content main .table-data > div {
+	border-radius: 20px;
+	background: var(--light);
+	padding: 24px;
+	overflow-x: auto;
+}
+#content main .table-data .head {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+	margin-bottom: 24px;
+}
+#content main .table-data .head h3 {
+	margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+#content main .table-data .head .bx {
+	cursor: pointer;
+}
+
+#content main .table-data .order {
+	flex-grow: 1;
+	flex-basis: 500px;
+}
+#content main .table-data .order table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#content main .table-data .order table th {
+	padding-bottom: 12px;
+	font-size: 13px;
+	text-align: left;
+	border-bottom: 1px solid var(--grey);
+}
+#content main .table-data .order table td {
+	padding: 16px 0;
+}
+#content main .table-data .order table tr td:first-child {
+	display: flex;
+	align-items: center;
+	grid-gap: 12px;
+	padding-left: 6px;
+}
+#content main .table-data .order table td img {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+#content main .table-data .order table tbody tr:hover {
+	background: var(--grey);
+}
+#content main .table-data .order table tr td .status {
+	font-size: 10px;
+	padding: 6px 16px;
+	color: var(--light);
+	border-radius: 20px;
+	font-weight: 700;
+}
+#content main .table-data .order table tr td .status.completed {
+	background: var(--blue);
+}
+#content main .table-data .order table tr td .status.process {
+	background: var(--yellow);
+}
+#content main .table-data .order table tr td .status.pending {
+	background: var(--orange);
+}
+
+
+#content main .table-data .todo {
+	flex-grow: 1;
+	flex-basis: 300px;
+}
+#content main .table-data .todo .todo-list {
+	width: 100%;
+}
+#content main .table-data .todo .todo-list li {
+	width: 100%;
+	margin-bottom: 16px;
+	background: var(--grey);
+	border-radius: 10px;
+	padding: 14px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#content main .table-data .todo .todo-list li .bx {
+	cursor: pointer;
+}
+#content main .table-data .todo .todo-list li.completed {
+	border-left: 10px solid var(--blue);
+}
+#content main .table-data .todo .todo-list li.not-completed {
+	border-left: 10px solid var(--orange);
+}
+#content main .table-data .todo .todo-list li:last-child {
+	margin-bottom: 0;
+}
+/* MAIN */
+/* CONTENT */
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+	#sidebar {
+		width: 200px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 200px;
+	}
+
+	#content nav .nav-link {
+		display: none;
+	}
+}
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+	#content nav form .form-input input {
+		display: none;
+	}
+
+	#content nav form .form-input button {
+		width: auto;
+		height: auto;
+		background: transparent;
+		border-radius: none;
+		color: var(--dark);
+	}
+
+	#content nav form.show .form-input input {
+		display: block;
+		width: 100%;
+	}
+	#content nav form.show .form-input button {
+		width: 36px;
+		height: 100%;
+		border-radius: 0 36px 36px 0;
+		color: var(--light);
+		background: var(--red);
+	}
+
+	#content nav form.show ~ .notification,
+	#content nav form.show ~ .profile {
+		display: none;
+	}
+
+	#content main .box-info {
+		grid-template-columns: 1fr;
+	}
+
+	#content main .table-data .head {
+		min-width: 420px;
+	}
+	#content main .table-data .order table {
+		min-width: 420px;
+	}
+	#content main .table-data .todo .todo-list {
+		min-width: 420px;
+	}
+}
+
+/* dark mode */
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+  }
+
+  .dark-mode .modal-content {
+    background-color: #444;
+    color: #fff;
+  }
+
+  .dark-mode .search-bar input {
+    background-color: #444;
+    color: #fff;
+  }
+
+  .dark-mode .list-group {
+    border-color: #444;
+  }
+
+  .dark-mode .list-group li {
+    background-color: #333;
+  }
+
+  #modification{
+    display:none;
+  }
+
+  /* 
+  modify
+  */
+
+  /* reusable */
+
+.capsule {
+    height: 26px;
+    line-height: 26px;
+    border-radius: 10px;
+  }
+  
+  #main_container {
+    display: flex;
+  }
+  
+  .container {
+    margin-bottom: 80px;
+  }
+  
+  .sidebar-one {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  
+  /* cards */
+  
+  /* card list */
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    gap: 4%;
+  }
+  
+  .card:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  
+  @media (min-width: 576px) {
+    .card {
+      flex-basis: 38%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card {
+      flex-basis: 100%;
+    }
+  }
+  
+  /* individual card  */
+  .card {
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    max-width: 550px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+  }
+  
+  .card-body > p {
+    font-size: 15px;
+  }
+  
+  .card__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  
+  .card__img {
+    margin-bottom: 8px;
+    height: 120px;
+  }
+  
+  .card > div > img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover !important;
+  }
+  
+  @media (min-width: 768px) {
+    .card {
+      flex-direction: row;
+    }
+  
+    .card__img {
+      flex-basis: 33%;
+      margin: 0;
+      height: auto;
+      max-height: 120px;
+    }
+  
+    .card__img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .card__title {
+    margin: 0;
+    color: #1c1c1c;
+    font-size: 18px;
+  }
+  
+  .card__description {
+    font-size: 15px;
+    color: #696969;
+    line-height: 1.5;
+  }
+  
+  .card > div > div > button {
+    background-color: red !important;
+    color: white;
+  }
+  
+  .card-button {
+    margin-left: 25%;
+    background-color: red;
+    color: white;
+  }
+  
+  .card-body > p {
+    margin-bottom: 5px;
+  }
+  
+  
+  h5 {
+    color: #696969;
+  }
+  
+  /* CSS for debounce-throttle page */
+  
+  #query {
+    height: 50px;
+    width: 350px;
+    font-size: 30px;
+  }
+  
+  #box {
+    width: max-content;
+    padding: 3rem;
+    margin: auto;
+    font-size: 30px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .card-img > img {
+    border: 1px solid #e1e1e1;
+    width: 60px;
+  }
+  
+  #pagination-wrapper {
+    margin-top: 10px;
+  }
+
+  /* reusable */
+
+.capsule {
+    height: 26px;
+    line-height: 26px;
+    border-radius: 10px;
+  }
+  
+  #main_container {
+    display: flex;
+  }
+  
+  .container {
+    margin-bottom: 80px;
+  }
+  
+  .sidebar-one {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  
+  /* cards */
+  
+  /* card list */
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    gap: 4%;
+  }
+  
+  .card:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  
+  @media (min-width: 576px) {
+    .card {
+      flex-basis: 38%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card {
+      flex-basis: 100%;
+    }
+  }
+  
+  /* individual card  */
+  .card {
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    max-width: 550px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+  }
+  
+  .card-body > p {
+    font-size: 15px;
+  }
+  
+  .card__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  
+  .card__img {
+    margin-bottom: 8px;
+    height: 120px;
+  }
+  
+  .card > div > img {
+    height: 120px;
+    width: 120px;
+    object-fit: cover !important;
+  }
+  
+  @media (min-width: 768px) {
+    .card {
+      flex-direction: row;
+    }
+  
+    .card__img {
+      flex-basis: 33%;
+      margin: 0;
+      height: auto;
+      max-height: 120px;
+    }
+  
+    .card__img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .card__title {
+    margin: 0;
+    color: #1c1c1c;
+    font-size: 18px;
+  }
+  
+  .card__description {
+    font-size: 15px;
+    color: #696969;
+    line-height: 1.5;
+  }
+  
+  .card > div > div > button {
+    background-color: red !important;
+    color: white;
+  }
+  
+  .card-button {
+    margin-left: 25%;
+    background-color: red;
+    color: white;
+  }
+  
+  .card-body > p {
+    margin-bottom: 5px;
+  }
+  
+  
+  h5 {
+    color: #696969;
+  }
+  
+  /* CSS for debounce-throttle page */
+  
+  #query {
+    height: 50px;
+    width: 350px;
+    font-size: 30px;
+  }
+  
+  #box {
+    width: max-content;
+    padding: 3rem;
+    margin: auto;
+    font-size: 30px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .card-img > img {
+    border: 1px solid #e1e1e1;
+    width: 60px;
+  }
+  
+  #pagination-wrapper {
+    margin-top: 10px;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box; }
+  .column,
+  .columns {
+    width: 100%;
+    float: left;
+    box-sizing: border-box; }
+  
+  /* For devices larger than 400px */
+  @media (min-width: 400px) {
+    .container {
+      width: 85%;
+      padding: 0; }
+  }
+  
+  /* For devices larger than 550px */
+  @media (min-width: 550px) {
+    .container {
+      width: 80%; }
+    .column,
+    .columns {
+      margin-left: 4%; }
+    .column:first-child,
+    .columns:first-child {
+      margin-left: 0; }
+  
+    .one.column,
+    .one.columns                    { width: 4.66666666667%; }
+    .two.columns                    { width: 13.3333333333%; }
+    .three.columns                  { width: 22%;            }
+    .four.columns                   { width: 30.6666666667%; }
+    .five.columns                   { width: 39.3333333333%; }
+    .six.columns                    { width: 48%;            }
+    .seven.columns                  { width: 56.6666666667%; }
+    .eight.columns                  { width: 65.3333333333%; }
+    .nine.columns                   { width: 74.0%;          }
+    .ten.columns                    { width: 82.6666666667%; }
+    .eleven.columns                 { width: 91.3333333333%; }
+    .twelve.columns                 { width: 100%; margin-left: 0; }
+  
+    .one-third.column               { width: 30.6666666667%; }
+    .two-thirds.column              { width: 65.3333333333%; }
+  
+    .one-half.column                { width: 48%; }
+  
+    /* Offsets */
+    .offset-by-one.column,
+    .offset-by-one.columns          { margin-left: 8.66666666667%; }
+    .offset-by-two.column,
+    .offset-by-two.columns          { margin-left: 17.3333333333%; }
+    .offset-by-three.column,
+    .offset-by-three.columns        { margin-left: 26%;            }
+    .offset-by-four.column,
+    .offset-by-four.columns         { margin-left: 34.6666666667%; }
+    .offset-by-five.column,
+    .offset-by-five.columns         { margin-left: 43.3333333333%; }
+    .offset-by-six.column,
+    .offset-by-six.columns          { margin-left: 52%;            }
+    .offset-by-seven.column,
+    .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+    .offset-by-eight.column,
+    .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+    .offset-by-nine.column,
+    .offset-by-nine.columns         { margin-left: 78.0%;          }
+    .offset-by-ten.column,
+    .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+    .offset-by-eleven.column,
+    .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+  
+    .offset-by-one-third.column,
+    .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+    .offset-by-two-thirds.column,
+    .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+  
+    .offset-by-one-half.column,
+    .offset-by-one-half.columns     { margin-left: 52%; }
+  
+  }
+  
+  
+  /* Base Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  /* NOTE
+  html is set to 62.5% so that all the REM measurements throughout Skeleton
+  are based on 10px sizing. So basically 1.5rem = 15px :) */
+  html {
+    font-size: 62.5%; }
+  body {
+    font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222; }
+  
+  
+  /* Typography
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 300; }
+  h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+  h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+  h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+  h4 { font-size: 2.4rem; line-height: 1.3; letter-spacing: -.08rem; }
+  h5 { font-size: 1.8rem; line-height: 1.3;  letter-spacing: -.05rem; }
+  h6 { font-size: 1.5rem; line-height: 1;  letter-spacing: 0; }
+  
+  /* Larger than phablet */
+  @media (min-width: 550px) {
+    h1 { font-size: 5.0rem; }
+    h2 { font-size: 4.2rem; }
+    h3 { font-size: 3.6rem; }
+    h4 { font-size: 3.0rem; }
+    h5 { font-size: 2.4rem; }
+    h6 { font-size: 1.5rem; }
+  }
+  
+  p {
+    margin-top: 0; }
+  
+  
+  /* Links
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  a {
+    color: #1EAEDB; }
+  a:hover {
+    color: #0FA0CE; }
+  
+  
+  /* Buttons
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .button,
+  button,
+  input[type="submit"],
+  input[type="date"],
+  input[type="reset"],
+  input[type="button"] {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: #555;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+    cursor: pointer;
+    box-sizing: border-box; }
+  .button:hover,
+  button:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  input[type="button"]:hover,
+  .button:focus,
+  button:focus,
+  input[type="submit"]:focus,
+  input[type="reset"]:focus,
+  input[type="button"]:focus {
+    color: #333;
+    border-color: #888;
+    outline: 0; }
+  .button.button-primary,
+  button.button-primary,
+  input[type="submit"].button-primary,
+  input[type="reset"].button-primary,
+  input[type="button"].button-primary {
+    color: #FFF;
+    background-color: #33C3F0;
+    border-color: #33C3F0; }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    color: #FFF;
+    background-color: #1EAEDB;
+    border-color: #1EAEDB; }
+  
+  
+  /* Forms
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  textarea,
+  select {
+    height: 38px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box; }
+  /* Removes awkward default styles on some inputs for iOS */
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  textarea {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+  textarea {
+    min-height: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px; }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #33C3F0;
+    outline: 0; }
+  label,
+  legend {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600; }
+  fieldset {
+    padding: 0;
+    border-width: 0; }
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline; }
+  label > .label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: normal; }
+  
+  
+  /* Lists
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  ul {
+    list-style: circle inside; }
+  ol {
+    list-style: decimal inside; }
+  ol, ul {
+    padding-left: 0;
+    margin-top: 0; }
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin: 1.5rem 0 1.5rem 3rem;
+    font-size: 90%; }
+  li {
+    margin-bottom: 1rem; }
+  
+  
+  /* Code
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  code {
+    padding: .2rem .5rem;
+    margin: 0 .2rem;
+    font-size: 90%;
+    white-space: nowrap;
+    background: #F1F1F1;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px; }
+  pre > code {
+    display: block;
+    padding: 1rem 1.5rem;
+    white-space: pre; }
+  
+  
+  /* Tables
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  th,
+  td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1; }
+  th:first-child,
+  td:first-child {
+    padding-left: 0; }
+  th:last-child,
+  td:last-child {
+    padding-right: 0; }
+  
+  
+  /* Spacing
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  button,
+  .button {
+    margin-bottom: 1rem; }
+  input,
+  textarea,
+  select,
+  fieldset {
+    margin-bottom: 1.5rem; }
+  pre,
+  blockquote,
+  dl,
+  figure,
+  table,
+  p,
+  ul,
+  ol,
+  form {
+    margin-bottom: 2.5rem; }
+  
+  
+  /* Utilities
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .u-full-width {
+    width: 100%;
+    box-sizing: border-box; }
+  .u-max-full-width {
+    max-width: 100%;
+    box-sizing: border-box; }
+  .u-pull-right {
+    float: right; }
+  .u-pull-left {
+    float: left; }
+  
+  
+  /* Misc
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  hr {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    border-width: 0;
+    border-top: 1px solid #E1E1E1; }
+  
+  
+  /* Clearing
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  /* Self Clearing Goodness */
+  .container:after,
+  .row:after,
+  .u-cf {
+    content: "";
+    display: table;
+    clear: both; }
+  
+  
+  /* Media Queries
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  /*
+  Note: The best way to structure the use of media queries is to create the queries
+  near the relevant code. For example, if you wanted to change the styles for buttons
+  on small devices, paste the mobile query code up in the buttons section and style it
+  there.
+  */
+  
+  
+  /* Larger than mobile */
+  @media (min-width: 400px) {}
+  
+  /* Larger than phablet (also point when grid becomes active) */
+  @media (min-width: 550px) {}
+  
+  /* Larger than tablet */
+  @media (min-width: 750px) {}
+  
+  /* Larger than desktop */
+  @media (min-width: 1000px) {}
+  
+  /* Larger than Desktop HD */
+  @media (min-width: 1200px) {}
+  body {
+    margin: 0;
+  }
+  
+  /* HTML5 display definitions
+     ========================================================================== */
+  
+  /**
+   * Correct `block` display not defined for any HTML5 element in IE 8/9.
+   * Correct `block` display not defined for `details` or `summary` in IE 10/11
+   * and Firefox.
+   * Correct `block` display not defined for `main` in IE 11.
+   */
+  
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+  
+  /**
+   * 1. Correct `inline-block` display not defined in IE 8/9.
+   * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+   */
+  
+  audio,
+  canvas,
+  progress,
+  video {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+  }
+  
+  /**
+   * Prevent modern browsers from displaying `audio` without controls.
+   * Remove excess height in iOS 5 devices.
+   */
+  
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+  
+  /**
+   * Address `[hidden]` styling not present in IE 8/9/10.
+   * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+   */
+  
+  [hidden],
+  template {
+    display: none;
+  }
+  
+  /* Links
+     ========================================================================== */
+  
+  /**
+   * Remove the gray background color from active links in IE 10.
+   */
+  
+  a {
+    background-color: transparent;
+  }
+  
+  /**
+   * Improve readability when focused and also mouse hovered in all browsers.
+   */
+  
+  a:active,
+  a:hover {
+    outline: 0;
+  }
+  
+  /* Text-level semantics
+     ========================================================================== */
+  
+  /**
+   * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+   */
+  
+  abbr[title] {
+    border-bottom: 1px dotted;
+  }
+  
+  /**
+   * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+   */
+  
+  b,
+  strong {
+    font-weight: bold;
+  }
+  
+  /**
+   * Address styling not present in Safari and Chrome.
+   */
+  
+  dfn {
+    font-style: italic;
+  }
+  
+  /**
+   * Address variable `h1` font-size and margin within `section` and `article`
+   * contexts in Firefox 4+, Safari, and Chrome.
+   */
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  /**
+   * Address styling not present in IE 8/9.
+   */
+  
+  mark {
+    background: #ff0;
+    color: #000;
+  }
+  
+  /**
+   * Address inconsistent and variable font size in all browsers.
+   */
+  
+  small {
+    font-size: 80%;
+  }
+  
+  /**
+   * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+   */
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  /* Embedded content
+     ========================================================================== */
+  
+  /**
+   * Remove border when inside `a` element in IE 8/9/10.
+   */
+  
+  img {
+    border: 0;
+  }
+  
+  /**
+   * Correct overflow not hidden in IE 9/10/11.
+   */
+  
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  
+  /* Grouping content
+     ========================================================================== */
+  
+  /**
+   * Address margin not present in IE 8/9 and Safari.
+   */
+  
+  figure {
+    margin: 1em 40px;
+  }
+  
+  /**
+   * Address differences between Firefox and other browsers.
+   */
+  
+  hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+  }
+  
+  /**
+   * Contain overflow in all browsers.
+   */
+  
+  pre {
+    overflow: auto;
+  }
+  
+  /**
+   * Address odd `em`-unit font size rendering in all browsers.
+   */
+  
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+  }
+  
+  /* Forms
+     ========================================================================== */
+  
+  /**
+   * Known limitation: by default, Chrome and Safari on OS X allow very limited
+   * styling of `select`, unless a `border` property is set.
+   */
+  
+  /**
+   * 1. Correct color not being inherited.
+   *    Known issue: affects color of disabled elements.
+   * 2. Correct font properties not being inherited.
+   * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    margin: 0; /* 3 */
+  }
+  
+  /**
+   * Address `overflow` set to `hidden` in IE 8/9/10/11.
+   */
+  
+  button {
+    overflow: visible;
+  }
+  
+  /**
+   * Address inconsistent `text-transform` inheritance for `button` and `select`.
+   * All other form control elements do not inherit `text-transform` values.
+   * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+   * Correct `select` style inheritance in Firefox.
+   */
+  
+  button,
+  select {
+    text-transform: none;
+  }
+  
+  /**
+   * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+   *    and `video` controls.
+   * 2. Correct inability to style clickable `input` types in iOS.
+   * 3. Improve usability and consistency of cursor style between image-type
+   *    `input` and others.
+   */
+  
+  button,
+  html input[type="button"], /* 1 */
+  input[type="reset"],
+  input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+  }
+  
+  /**
+   * Re-set default cursor for disabled elements.
+   */
+  
+  button[disabled],
+  html input[disabled] {
+    cursor: default;
+  }
+  
+  /**
+   * Remove inner padding and border in Firefox 4+.
+   */
+  
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  
+  /**
+   * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+   * the UA stylesheet.
+   */
+  
+  input {
+    line-height: normal;
+  }
+  
+  /**
+   * It's recommended that you don't attempt to style these elements.
+   * Firefox's implementation doesn't respect box-sizing, padding, or width.
+   *
+   * 1. Address box sizing set to `content-box` in IE 8/9/10.
+   * 2. Remove excess padding in IE 8/9/10.
+   */
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  /**
+   * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+   * `font-size` values of the `input`, it causes the cursor style of the
+   * decrement button to change from `default` to `text`.
+   */
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  
+  /**
+   * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+   * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+   *    (include `-moz` to future-proof).
+   */
+  
+  input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+  }
+  
+  /**
+   * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+   * Safari (but not Chrome) clips the cancel button when the search input has
+   * padding (and `textfield` appearance).
+   */
+  
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  /**
+   * Define consistent border, margin, and padding.
+   */
+  
+  fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+  }
+  
+  /**
+   * 1. Correct `color` not being inherited in IE 8/9/10/11.
+   * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+   */
+  
+  legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  /**
+   * Remove default vertical scrollbar in IE 8/9/10/11.
+   */
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  /**
+   * Don't inherit the `font-weight` (applied by a rule above).
+   * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+   */
+  
+  optgroup {
+    font-weight: bold;
+  }
+  
+  /* Tables
+     ========================================================================== */
+  
+  /**
+   * Remove most spacing between table cells.
+   */
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  td,
+  th {
+    padding: 0;
+  }

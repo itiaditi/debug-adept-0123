@@ -1,9 +1,9 @@
 
-let cartEmail = "indrani@gmail.com";
-// let cartEmail = localStorage.getItem("id");
+// let cartEmail = "indrani@gmail.com";
+ let cartEmail = localStorage.getItem("localAccessToken");
 
 // FRONTEND_URLs
-let cartPageURL = `http://127.0.0.1:5500/snapBasket/html/cart.html`;
+let cartPageURL = `./html/cart.html`;
 
 // BACKEND_URLs
 let registerURL = `https://debug-adept-0123.onrender.com/customer`;
@@ -72,12 +72,28 @@ let loginUserButton = document.getElementById("loginForm");
 loginUserButton.addEventListener("click", logIn);
 let loginUserUsername = document.getElementById("username");
 let loginUserPassword = document.getElementById("password");
-
+let adminURL = `https://debug-adept-0123.onrender.com/admin`;
 async function logIn() {
   try {
     let res1 = await fetch(registerURL);
     let data1 = await res1.json();
+    let res2 = await fetch(adminURL);
+    let data2 = await res2.json();
     console.log(data1);
+
+    console.log(data2);
+   let obj1 = data2.find(
+      (item) =>
+        item.userName === loginUserUsername.value &&
+        item.password === loginUserPassword.value
+    );
+    if(obj1){
+      admin = obj1.userName;
+     
+      localStorage.setItem("localAdminToken", admin);
+      window.location.href=`./html/admin.html`;
+      return;
+    }
     let obj = data1.find(
       (item) =>
         item.id === loginUserUsername.value &&
@@ -87,35 +103,36 @@ async function logIn() {
       throw new Error("Username or password input elements not found");
     }
 
-    let credentials = {
-      id: loginUserUsername.value,
-      password: loginUserPassword.value,
-    };
+    // let credentials = {
+    //   id: loginUserUsername.value,
+    //   password: loginUserPassword.value,
+    // };
 
-    let res = await fetch(registerURL, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(credentials),
-    });
+    // let res = await fetch(registerURL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(credentials),
+    // });
 
-    if (!res.ok) {
-      throw new Error("Failed to login");
-    }
+    // if (!res.ok) {
+    //   throw new Error("Failed to login");
+    // }
 
-    let data = await res.json();
-
+    // let data = await res.json();
+  
     // Set userAuthToken and userId variables
-    userAuthToken = data.id;
+    userAuthToken = obj.id;
     //userId = data.user.id;
 
     // Set local storage keys
     localStorage.setItem("localAccessToken", userAuthToken);
     //localStorage.setItem("userId", userId);
-
+alert("Login Successfully");
+window.location.href=`./index.html`;
     // Fetch todos after user has logged in
-    await fetchTodos();
+
 
     // Construct notification message
   } catch (err) {
@@ -145,7 +162,10 @@ async function registerUser() {
 
     if (response.ok) {
       let data = await response.json();
+      
       console.log("User registered successfully:", data);
+      alert("Successfuly registered");
+      window.location.href=`./index.html`
     } else {
       throw new Error("Failed to register the user");
     }
@@ -470,3 +490,56 @@ async function fetchData(page, query = "") {
     console.log(err);
   }
 }
+
+// record of visitors
+      // Function to get current date and time
+      function getCurrentDateTime() {
+        const now = new Date();
+        return now.toLocaleString(); // Adjust formatting as needed
+      }
+
+      // Function to store visitor record in local storage
+      function storeVisitorRecord() {
+        const visitRecord = {
+          timestamp: getCurrentDateTime(),
+          userAgent: navigator.userAgent,
+          language: navigator.language,
+          screenWidth: window.screen.width,
+          screenHeight: window.screen.height,
+        };
+
+        // Get existing records or initialize empty array
+        let visitorRecords =
+          JSON.parse(localStorage.getItem("visitorRecords")) || [];
+        // Add current visit record to the array
+        visitorRecords.push(visitRecord);
+        // Store updated records back to local storage
+        localStorage.setItem("visitorRecords", JSON.stringify(visitorRecords));
+
+        // Update visitor count in the window
+        document.getElementById("visitorCount").textContent =visitorRecords.length;
+      }
+
+      // Function to display visitor count when the page loads
+      function displayVisitorCount() {
+        // Get existing visitor records from local storage
+        let visitorRecords =
+          JSON.parse(localStorage.getItem("visitorRecords")) || [];
+        // Display the count of visitor records
+        document.getElementById("visitorCount").textContent =
+          visitorRecords.length;
+      }
+
+      // Call function to store visitor record when the page loads
+      storeVisitorRecord();
+      // Call function to display visitor count when the page loads
+      displayVisitorCount();
+
+      //
+
+//       let about = document.getElementById("about");
+//       about.addEventListener("click",(e)=>{
+// e.preventDefault();
+// window.location.href=`../html/login.html`;
+//       }
+//       )
