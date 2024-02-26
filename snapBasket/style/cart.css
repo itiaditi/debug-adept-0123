@@ -373,17 +373,20 @@ img {
 }
 
 #emptyBtnDiv {
-  height: 35%;
+  height: 50%;
   border: 1px solid rgb(255, 50, 105);
-  padding: 5px;
+  padding: 7px;
   border-radius: 5px;
   background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 #emptyBtn {
-  border: none;
+  /* border: 1px solid; */
   color: rgb(255, 50, 105);
   background-color: white;
+  font-weight: bold;
 }
 
 #mainBox {
@@ -438,6 +441,9 @@ img {
 #thirdInnerRightBox {
   height: 25vh;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #secondInnerRightBox > div {
@@ -445,7 +451,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin: 0px auto 0px auto;
-  height: auto;
+  height: 20%;
 }
 #secondInnerRightBox p,
 pre {

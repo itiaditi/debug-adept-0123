@@ -974,7 +974,21 @@
       "name": "Aditi",
       "id": "aditi@gmail.com",
       "password": "qwerty123"
-
+    },
+    {
+      "name": "Nrupul",
+      "id": "np@gmail.com",
+      "password": "123"
+    },
+    {
+      "name": "Prateek",
+      "id": "p@gmail.com",
+      "password": "123"
+    },
+    {
+      "name": "abc",
+      "id": "a@gmail.com",
+      "password": "123"
     }
   ],
   "admin": [
@@ -1027,12 +1041,26 @@
           "quantity": "1 kg",
           "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/fb65ab4a-23a2-4468-b7a2-756895f11e58-Photo.jpeg",
           "productName": "Pomegranate Regular",
+          "eachProductCount": 3
+        }
+      ],
+      "totalItem": "17",
+      "id": "indrani@gmail.com"
+    },
+    {
+      "product": [
+        {
+          "id": "11",
+          "price": "155",
+          "offers": "20",
+          "quantity": "1 kg",
+          "imageLink": "https://cdn.zeptonow.com/production///tr:w-200,ar-500-500,pr-true,f-auto,q-80/inventory/product/fb65ab4a-23a2-4468-b7a2-756895f11e58-Photo.jpeg",
+          "productName": "Pomegranate Regular",
           "eachProductCount": 2
         }
       ],
-      "totalItem": "16",
-      "totalAmount": null,
-      "id": "indrani@gmail.com"
+      "totalItem": "2",
+      "id": "p@gmail.com"
     }
   ]
 }

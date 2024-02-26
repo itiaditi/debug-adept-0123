@@ -1,3 +1,6 @@
+const cartUrl = `https://debug-adept-0123.onrender.com/cart`;
+// let cartUrl = `http://localhost:3000/cart`;
+
 //navbar
 const navbarMenu = document.getElementById("menu");
 const burgerMenu = document.getElementById("burger");
@@ -42,11 +45,9 @@ if (searchToggle && searchCancel) {
 
 
 
-
-
 // get cartEmail from localStorage
 let cartEmail = "indrani@gmail.com";
-
+// let cartEmail=localStorage.getItem('id');
 async function getData(cartEmail) {
   try {
     if (!cartEmail) {
@@ -54,7 +55,7 @@ async function getData(cartEmail) {
         "http://127.0.0.1:5500/snapBasket/html/login.html" //login page url
       );
     }
-    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`);
+    let res = await fetch(`${cartUrl}/${cartEmail}`);
     let data = await res.json();
     const products = data.product;
     let totalItem = data.totalItem;
@@ -155,14 +156,16 @@ function displayData(productArr, totalItem, totalAmount) {
     leftBox.append(parentBox);
 
     let placeOrder=document.getElementById('thirdInnerRightBox');
-    placeOrder.addEventListener('click',afterOrderPlace);
+    placeOrder.addEventListener('click',()=>{
+      emptyCartForPlacingOrder(uiafterOrderPlace)
+    });
   });
 
   updateItemTotal(productArr);
 }
 
 //ui after order placing
-function afterOrderPlace()
+function uiafterOrderPlace()
 {
   let box = document.getElementById("container");
   box.innerHTML = "";
@@ -235,7 +238,7 @@ function eachProductIncrement(product, allProducts, totalItem, totalAmount, e) {
 // Update cart products
 async function updateCartProducts(allProducts, totalItem, totalAmount) {
   try {
-    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`, {
+    let res = await fetch(`${cartUrl}/${cartEmail}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -248,16 +251,16 @@ async function updateCartProducts(allProducts, totalItem, totalAmount) {
     });
 
     let data = await res.json();
-    console.log(data);
+    window.location.reload();
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 }
 
 // empty cart
-async function emptyCart() {
+async function emptyCart(uiAfterRemovingProduct) {
   try {
-    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`, {
+    let res = await fetch(`${cartUrl}/${cartEmail}`, {
       method: "PUT",
       body: JSON.stringify({
         product: [],
@@ -270,7 +273,7 @@ async function emptyCart() {
 
     if (res.ok) {
       console.log("Cart data deleted successfully on the server.");
-      localStorage.removeItem("cart");
+      uiAfterRemovingProduct();
     } else {
       console.log("Error deleting cart data on the server.");
     }
@@ -279,22 +282,48 @@ async function emptyCart() {
   }
 }
 
+async function emptyCartForPlacingOrder(uiafterOrderPlace) {
+  try {
+    let res = await fetch(`${cartUrl}/${cartEmail}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        product: [],
+        totalItem: "0",
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (res.ok) {
+      console.log("Cart data deleted successfully on the server.");
+     
+      uiafterOrderPlace();
+    } else {
+      console.log("Error deleting cart data on the server.");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
 function uiAfterRemovingProduct() {
   let box = document.getElementById("container");
   box.innerHTML = "";
   let uiBox = document.createElement("div");
   uiBox.style.width = "100vw";
   uiBox.style.height = "100vh";
-  uiBox.style.border = "1px solid yellow";
+  uiBox.style.border = "1px solid white";
 
   let imageEmptyBag = document.createElement("img");
   imageEmptyBag.setAttribute(
     "src",
     "https://cdn.zeptonow.com/app/images/empty-bag.png?tr=w-640,q-70"
   );
-  imageEmptyBag.style.width = "3%";
+  imageEmptyBag.style.width = "5%";
 
-  imageEmptyBag.style.margin = "100px auto auto auto";
+  imageEmptyBag.style.margin = "150px auto 20px auto";
   imageEmptyBag.style.display = "block";
 
   let emptyText = document.createElement("h4");
@@ -326,6 +355,7 @@ function uiAfterRemovingProduct() {
   productBrowseDiv.style.justifyContent = "center";
   productBrowseDiv.style.width = "8%";
   productBrowseDiv.style.border = "1px solid rgb(255,50,105)";
+  productBrowseDiv.style.margin = "15px 3px 10px 3px";
   productBrowseDiv.style.padding = "10px 3px 10px 3px";
   productBrowseDiv.style.borderRadius = "5px";
 

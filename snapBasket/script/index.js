@@ -1,80 +1,182 @@
-//login 
-  // login submit button
-  console.clear();
-  const loginModal = document.getElementById("loginModal");
-  const openModalButton = document.getElementById("openModal");
-  const loginBtn = document.getElementById("login");
-  const signupBtn = document.getElementById("signup");
 
-  function openModal() {
-    loginModal.style.display = "block";
-    document.getElementById("mainBody").style.filter = "blur(5px)";
+let cartEmail = "indrani@gmail.com";
+// let cartEmail = localStorage.getItem("id");
+
+// FRONTEND_URLs
+let cartPageURL = `http://127.0.0.1:5500/snapBasket/html/cart.html`;
+
+// BACKEND_URLs
+let registerURL = `https://debug-adept-0123.onrender.com/customer`;
+// let registerURL = `http://localhost:3000/customer`;
+
+const cartUrl = `https://debug-adept-0123.onrender.com/cart`;
+// let cartUrl = `http://localhost:3000/cart`;
+
+const urlFruits = `https://debug-adept-0123.onrender.com/Fruits`;
+
+
+let submitBtn = document.getElementById("signUpBtn");
+
+let userNameInput = document.getElementById("signUpName");
+let userEmailInput = document.getElementById("semail");
+let userPasswordInput = document.getElementById("spass");
+
+//login
+// login submit button
+console.clear();
+const loginModal = document.getElementById("loginModal");
+const openModalButton = document.getElementById("openModal");
+const loginBtn = document.getElementById("login");
+const signupBtn = document.getElementById("signup");
+
+function openModal() {
+  loginModal.style.display = "block";
+  document.getElementById("mainBody").style.filter = "blur(5px)";
+}
+
+function closeModal() {
+  loginModal.style.display = "none";
+  document.getElementById("mainBody").style.filter = "blur(0px)";
+}
+
+openModalButton.addEventListener("click", openModal);
+openModalButton.addEventListener("dblclick", closeModal);
+// Close the modal when clicking outside of it
+window.addEventListener("click", function (event) {
+  if (event.target === loginModal) {
+    closeModal();
   }
-  
+});
 
-  function closeModal() {
-    loginModal.style.display = "none";
-    document.getElementById("mainBody").style.filter = "blur(0px)";
+// Close the modal when pressing the ESC key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
   }
+});
 
-  openModalButton.addEventListener("click", openModal);
-  openModalButton.addEventListener("dblclick", closeModal);
-  // Close the modal when clicking outside of it
-  window.addEventListener("click", function (event) {
-    if (event.target === loginModal) {
-      closeModal();
+loginBtn.addEventListener("click", (e) => {
+  let parent = e.target.parentNode.parentNode;
+  Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+    if (element !== "slide-up") {
+      parent.classList.add("slide-up");
+    } else {
+      signupBtn.parentNode.classList.add("slide-up");
+      parent.classList.remove("slide-up");
     }
   });
+});
 
-  // Close the modal when pressing the ESC key
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeModal();
+// Add event listener to login button
+let loginUserButton = document.getElementById("loginForm");
+loginUserButton.addEventListener("click", logIn);
+let loginUserUsername = document.getElementById("username");
+let loginUserPassword = document.getElementById("password");
+
+async function logIn() {
+  try {
+    let res1 = await fetch(registerURL);
+    let data1 = await res1.json();
+    console.log(data1);
+    let obj = data1.find(
+      (item) =>
+        item.id === loginUserUsername.value &&
+        item.password === loginUserPassword.value
+    );
+    if (!obj) {
+      throw new Error("Username or password input elements not found");
+    }
+
+    let credentials = {
+      id: loginUserUsername.value,
+      password: loginUserPassword.value,
+    };
+
+    let res = await fetch(registerURL, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to login");
+    }
+
+    let data = await res.json();
+
+    // Set userAuthToken and userId variables
+    userAuthToken = data.id;
+    //userId = data.user.id;
+
+    // Set local storage keys
+    localStorage.setItem("localAccessToken", userAuthToken);
+    //localStorage.setItem("userId", userId);
+
+    // Fetch todos after user has logged in
+    await fetchTodos();
+
+    // Construct notification message
+  } catch (err) {
+    console.log("Error logging in:", err);
+  }
+}
+
+// ******************************************************************
+
+submitBtn.addEventListener("click", registerUser);
+
+async function registerUser() {
+  try {
+    let userData = {
+      id: userEmailInput.value,
+      name: userNameInput.value,
+      password: userPasswordInput.value,
+    };
+
+    let response = await fetch(registerURL, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (response.ok) {
+      let data = await response.json();
+      console.log("User registered successfully:", data);
+    } else {
+      throw new Error("Failed to register the user");
+    }
+  } catch (error) {
+    console.error("Error registering user:", error);
+  }
+}
+
+signupBtn.addEventListener("click", (e) => {
+  let parent = e.target.parentNode;
+  Array.from(e.target.parentNode.classList).find((element) => {
+    if (element !== "slide-up") {
+      parent.classList.add("slide-up");
+    } else {
+      loginBtn.parentNode.parentNode.classList.add("slide-up");
+      parent.classList.remove("slide-up");
     }
   });
+});
 
-  loginBtn.addEventListener("click", (e) => {
-    let parent = e.target.parentNode.parentNode;
-    Array.from(e.target.parentNode.parentNode.classList).find((element) => {
-      if (element !== "slide-up") {
-        parent.classList.add("slide-up");
-      } else {
-        signupBtn.parentNode.classList.add("slide-up");
-        parent.classList.remove("slide-up");
-      }
-    });
-  });
 
-  signupBtn.addEventListener("click", (e) => {
-    let parent = e.target.parentNode;
-    Array.from(e.target.parentNode.classList).find((element) => {
-      if (element !== "slide-up") {
-        parent.classList.add("slide-up");
-      } else {
-        loginBtn.parentNode.parentNode.classList.add("slide-up");
-        parent.classList.remove("slide-up");
-      }
-    });
-  });
 // ***************************************************************************
 
+//cart click
+let cartClick = document.getElementById("cart");
+cartClick.addEventListener("click", () => {
+  window.location.replace(
+    cartPageURL 
+  );
+});
 
-
-
-
-
-//cart click 
-let cartClick=document.getElementById('cart');
-cartClick.addEventListener('click',()=>{
-   window.location.replace(
-      "http://127.0.0.1:5500/snapBasket/html/cart.html" //login page url
-    );
-})
-
-
-
-//ip
-let cartEmail = "indrani@gmail.com";
 
 // Open and Close Navbar Menu
 const navbarMenu = document.getElementById("menu");
@@ -179,79 +281,11 @@ function mediaManagement() {
   }
 }
 
-// cart items
 
-// let totalQuantity = 0;
-
-
-//ip
-// let totalQuantity = 0;
-// function incrementQuantity(button) {
-//   // increment
-//   const card = button.closest(".card1");
-//   const quantitySpan = card.querySelector(".quantity");
-//   // const addToCartDiv = card.querySelector('.addToCart');
-//   let quantity = parseInt(quantitySpan.textContent);
-//   quantity++;
-//   quantitySpan.textContent = quantity;
-
-//   totalQuantity++;
-//   const totalQuantitySpan = document.getElementById("totalQuantity");
-//   totalQuantitySpan.textContent = totalQuantity;
-//   // addToCartDiv.innerHTML = `<button onclick="decrementQuantity(this)">-</button>
-//   // <span class="quantity">1</span>
-//   // <button onclick="incrementQuantity(this)">+</button>`
-// }
-
-// ip
-// function addToMyCart(button) {
-//   const card = button.closest(".card1");
-//   const quantitySpan = card.querySelector(".quantity");
-//   const addToCartDiv = card.querySelector(".addToCart");
-//   //  let quantity = parseInt(quantitySpan.textContent);
-//   //  quantity++;
-//   //  quantitySpan.textContent = quantity;
-
-//   totalQuantity++;
-//   const totalQuantitySpan = document.getElementById("totalQuantity");
-//   totalQuantitySpan.textContent = totalQuantity;
-//   addToCartDiv.innerHTML = `<button onclick="decrementQuantity(this)">-</button>
-//     <span class="quantity">1</span>
-//     <button onclick="incrementQuantity(this)">+</button>`;
-// }
-
-// function decrementQuantity(button) {
-//   const card = button.closest(".card1");
-//   const quantitySpan = card.querySelector(".quantity");
-//   let quantity = parseInt(quantitySpan.textContent);
-
-//   if (quantity > 0) {
-//     quantity--;
-//     quantitySpan.textContent = quantity;
-
-//     totalQuantity--;
-//     const totalQuantitySpan = document.getElementById("totalQuantity");
-//     totalQuantitySpan.textContent = totalQuantity;
-
-//     if (quantity === 0) {
-//       const addToCartDiv = card.querySelector(".addToCart");
-//       addToCartDiv.innerHTML =
-//         '<button onclick="addToMyCart(this)">Add</button>';
-//     }
-//   }
-// }
-
-// data append on page
-
-// let selectedOption;
-// function handleSearch() {
-//   selectedOption = searchBySelect.value;
-//   console.log("Selected Option:", selectedOption);
-// }
 
 const searchByInput = document.getElementsByClassName("bx-search");
-const urlFruits = `https://debug-adept-0123.onrender.com/Fruits`;
-const cartUrl = "https://debug-adept-0123.onrender.com/cart";
+// const urlFruits = `https://debug-adept-0123.onrender.com/Fruits`;
+// const cartUrl = "https://debug-adept-0123.onrender.com/cart";  // change
 let page = 1;
 
 function handleKeyPress(event) {
@@ -272,7 +306,6 @@ function searchData() {
 let mainSection = document.getElementById("cardsContainerWrapper");
 
 
-// Removed onclick="addToMyCart(this)" from button in the following function - ip
 function creatCard(obj) {
   let card;
   if (obj.offers) {
@@ -305,43 +338,26 @@ function creatCard(obj) {
          </div>
       </div>
  </div>`;
-    //  <button onclick="decrementQuantity(this)">-</button>
-    //                 <span class="quantity">0</span>
-    //                 <button onclick="incrementQuantity(this)">+</button>
+  
   }
   return card;
 }
 
 
 // ip
-// async function addToCart1(id, data) {
-//   let obj = data.find((item) => item.id === id);
-//   let res = await fetch(`${cartUrl}`, {
-//     method: "POST",
-//     headers: {
-//       "Content-type": "application/json",
-//     },
-//     body: JSON.stringify(obj),
-//   });
-//   let data1 = await res.json();
-//   console.log(data1);
-//   //  fetchData();
-// }
-
-// ip
-async function updateCart(productArr, totalCnt) {
+async function updateCart(productArr, totalCnt, cartEmail) {
   try {
-    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`, {
+    let res = await fetch(`${cartUrl}/${cartEmail}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
       body: JSON.stringify({
         product: productArr,
-        totalItem: totalCnt,
+        totalItem: totalCnt
       }),
     });
-    
+
     alert("Product added to the cart!");
   } catch (err) {
     console.log(err);
@@ -349,31 +365,57 @@ async function updateCart(productArr, totalCnt) {
 }
 async function addProductToProductArray(cartEmail, product) {
   try {
-    let res = await fetch(`http://localhost:3000/cart/${cartEmail}`);
-    let data = await res.json();
-    let productArr = data.product;
-    let totalCnt = (+data.totalItem + 1) + "";
+    let res = await fetch(`${cartUrl}/${cartEmail}`);
 
-    let flag = false;
-    productArr.forEach((el) => {
-      if (el.id === product.id) {
-        flag = true;
-        el.eachProductCount++;
+    // ip
+    if (!res.ok) {
+      let res1 = await fetch(`${cartUrl}/${cartEmail}`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id: cartEmail,
+          totalItem: "1",
+          product: [product],
+        }),
+      });
+
+      if (res1.ok) alert("Product added to the cart!");
+    } else {
+      let data = await res.json();
+
+      let productArr = data.product;
+      let totalCnt = +data.totalItem + 1 + "";
+
+      let flag = false;
+      productArr.forEach((el) => {
+        if (el.id === product.id) {
+          flag = true;
+          el.eachProductCount++;
+        }
+      });
+
+      if (!flag) {
+        productArr.push(product);
       }
-    });
 
-    if (!flag) {
-      productArr.push(product);
+      updateCart(productArr, totalCnt, cartEmail);
     }
-
-    updateCart(productArr, totalCnt);
   } catch (err) {
     console.log(err);
   }
 }
 
 //ip
-function collectProductFromHomeCard(e) {
+function collectProductFromHomeCard(e, cartEmail) {
+
+  if (!cartEmail) {
+    window.location.replace(
+      "http://127.0.0.1:5500/snapBasket/html/login.html" //login page url
+    );
+  }
+
   let card = e.currentTarget.parentNode.parentNode.parentNode;
   let offers = card.childNodes[1].innerText.slice(0, -4);
   let imageLink = card.childNodes[3].childNodes[0].src;
@@ -392,7 +434,6 @@ function collectProductFromHomeCard(e) {
     eachProductCount: "1",
   };
 
-
   addProductToProductArray(cartEmail, product);
 }
 
@@ -403,7 +444,7 @@ function appendData(data) {
   let addToCart = document.getElementsByClassName("addToCart");
   for (let item of addToCart) {
     // Ip
-    item.addEventListener("click", (e) => collectProductFromHomeCard(e));
+    item.addEventListener("click", (e) => collectProductFromHomeCard(e, cartEmail));
   }
 }
 
