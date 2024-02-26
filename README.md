@@ -1,5 +1,7 @@
 # Masai construct week project Unit 4
 Hello and welcome to our JS204 Construct Week Project! Over the span of five days, our team of four members worked collaboratively to craft this project.
+
+Welcome to snapBasket, your one-stop online destination for all your grocery needs! At snapBasket, we understand the importance of convenience and quality when it comes to shopping for your daily essentials. With our user-friendly interface selection of fresh produce, pantry staples, we strive to make your grocery shopping experience enjoyable.
 # Team Members
 
 Aditi Dhiman
