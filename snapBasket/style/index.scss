@@ -275,7 +275,7 @@
 #loginModal {
   display: none;
 }
-.modal {
+.modal1 {
   display: none;
   position: fixed;
   top: 50%;
@@ -288,7 +288,7 @@
   z-index: 9999;
 }
 
-.modal-content {
+.modal1-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -376,7 +376,7 @@ img {
   padding: 5rem 0 2rem;
 }
 
-.container {
+.container1 {
   max-width: 75rem;
   height: auto;
   margin: 0 auto;
@@ -395,7 +395,7 @@ img {
 }
 
 /* // Header */
-.header {
+.header1 {
   position: sticky;
   left: 0;
   top: 0;
@@ -407,7 +407,7 @@ img {
   box-shadow: var(--shadow-medium);
 }
 
-.navbar {
+.navbar1 {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -450,7 +450,7 @@ img {
     text-transform: uppercase;
     color: var(--color-black);
     transition: all 0.3s ease;
-
+    text-decoration: none;
     &:hover {
       color: var(--color-blue-200);
     }
@@ -624,6 +624,10 @@ img {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+  cursor: pointer;
+  h4{
+    font-size: 18px;
+  }
   p {
     font-weight: 100;
   }
@@ -811,3 +815,219 @@ img {
 //  .quantity-control span {
 //    font-size: 18px;
 //  }
+
+// detailpage css
+
+.middle-container {
+  display: flex;
+}
+
+.coursel-image {
+  display: flex;
+  height: 400px;
+  width: 600px;
+  border: 1px solid #cecbcf;
+  border-radius: 5px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.carousel {
+  height: 250px;
+  width: 250px;
+
+}
+
+.description {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.description>.cut-text {
+  text-decoration: line-through;
+  margin-left: 20px;
+  color: #cecbcf;
+}
+
+.description>.off {
+  height: 30px;
+  width: 100px;
+  background: linear-gradient(to bottom, #54B227, #153f01);
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 5px;
+  color: white;
+}
+
+.description>h6 {
+  color: #89888a;
+}
+
+.description>button {
+  height: 50px;
+  width: 100px;
+  margin-top: 20px;
+  background-color: #FF3C69;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid gray;
+  width: 650px;
+  margin-top: 50px;
+}
+
+.description>a {
+  text-decoration: none;
+  color: black;
+}
+
+.description>.papaya {
+  color: gray;
+}
+
+.box {
+  display: flex;
+  height: 80px;
+  width: 80px;
+  border: 1px solid #cecbcf;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box>img {
+  height: 50px;
+  width: 50px;
+
+
+}
+
+.points {
+  display: flex;
+
+}
+
+.points>div>h5 {
+  margin-left: 30px;
+  font-family: sans-serif;
+  font-style: normal;
+
+}
+
+.points>div>p {
+  margin-left: 30px;
+  color: gray;
+  font-family: sans-serif;
+  font-style: normal;
+
+}
+
+
+
+/* css for recommendations */
+.might-like {
+  height: 400px;
+  width: auto;
+  background-color: #F7F6F7;
+
+  margin-top: 50px;
+
+}
+
+.might-like>p {
+  padding-top: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  padding-left: 40px;
+
+}
+
+.recommend {
+  display: flex;
+}
+
+
+/* css-for-recoomation-cards */
+.recommend-card {
+  height: 300px;
+  width: 220px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.recommend-card>img {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin-left: 35px;
+  margin-top: 20px;
+  z-index: 1;
+
+
+}
+
+.recommend-card>.off {
+  position: absolute;
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: white;
+  background-color: #54B227;
+  z-index: 2;
+  padding: 5px 5px 5px 5px;
+  border-bottom-right-radius: 10px;
+
+}
+
+.recommend-card>h6{
+  margin: 10px 0 0 10px;
+  color: black;
+  font-weight: bold;
+
+}
+.recommend-card>p{
+  margin: 10px 0 0 10px;
+  color: #89888a;
+  margin-top: -1px;
+}
+.recommend-card>div>.price{
+    margin-top: 30px;
+    margin-left: 10px;
+    color: #89888a;
+    text-decoration: line-through;
+}
+.recommend-card>div>button{
+  margin-left: 70px;
+  border:  1px solid #FF3C69;
+  padding: 8px 10px 8px 10px;
+  background-color: white;
+  border-radius: 5px;
+  color: #FF3C69;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+ul{
+  margin: 40px 0 0 40px;
+}
+ul>li{
+  color: #89888a;
+  text-decoration: none;
+}

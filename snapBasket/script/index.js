@@ -329,9 +329,9 @@ let mainSection = document.getElementById("cardsContainerWrapper");
 function creatCard(obj) {
   let card;
   if (obj.offers) {
-    card = `<div class="card1">
+    card = `<div class="card1" data-id=${obj.id}>
       <div class="offer">${obj.offers}%off</div>
-      <div class="cardImage"><img src=${obj.imageLink} alt="img"></div>
+      <div class="cardImage" data-id=${obj.id}><img src=${obj.imageLink} alt="img"></div>
       <div class="cardContent">
          <h4>${obj.productName}</h4>
          <p>${obj.quantity}</p>
@@ -344,7 +344,7 @@ function creatCard(obj) {
       </div>
  </div>`;
   } else {
-    card = `<div class="card1">
+    card = `<div class="card1" data-id=${obj.id}>
    <div class="offer"></div>
       <div class="cardImage"><img src=${obj.imageLink} alt="img"></div>
       <div class="cardContent">
@@ -466,6 +466,11 @@ function appendData(data) {
     // Ip
     item.addEventListener("click", (e) => collectProductFromHomeCard(e, cartEmail));
   }
+
+  let eachCard = document.getElementsByClassName("cardImage");
+  for(let item of eachCard){
+    item.addEventListener("click",(e)=> productDetailPage(e));
+  }
 }
 
 window.addEventListener("scroll", () => {
@@ -543,3 +548,234 @@ async function fetchData(page, query = "") {
 // window.location.href=`../html/login.html`;
 //       }
 //       )
+
+
+
+// Product detais page
+
+function productDetailPage(e){
+  let card = e.currentTarget.parentNode ;
+  let offers = card.childNodes[1].innerText.slice(0, -4);
+  let imageLink = card.childNodes[3].childNodes[0].src;
+  let productName = card.childNodes[5].childNodes[1].innerText;
+  let quantity = card.childNodes[5].childNodes[3].innerText;
+  let price = card.childNodes[5].childNodes[5].childNodes[1].innerText.slice(1);
+  let id = card.dataset.id;
+
+  let product = {
+    id,
+    price,
+    offers,
+    quantity,
+    imageLink,
+    productName,
+    eachProductCount: "1",
+  };
+
+  console.log(product);
+
+  let Detailpage = `<div class="middle-container">
+  <div>
+      <div class="coursel-image">
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img src=${imageLink}
+                          class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                      <img src=${imageLink}
+                          class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                      <img src=${imageLink}
+                          class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                      <img src=${imageLink}
+                          class="d-block w-100" alt="...">
+                  </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+
+          </div>
+  
+
+ 
+    
+
+      </div>
+      <!-- deatils of products -->
+      <ul>
+          <li>Description : Papayas contain high levels of antioxidants vitamin a, vitamin c, and vitamin e. Diets high in antioxidants may reduce the risk of heart disease. The antioxidants prevent the oxidation of cholesterol. When cholesterol oxidizes, it’s more likely to create blockages that lead to heart disease.</li>
+          <li>Country of Origin : India</li>
+          <li>Shelf Life : 5 days</li>
+          <li>Fill muffin tray 3/4 full.</li>
+          <li>How to Use : Suitable for salad and can be eaten fresh.</li>
+        </ul>
+        
+  </div>
+ 
+
+
+
+
+
+
+
+
+  <div class="description">
+      <a href="#">Home&gt;</a>
+      <a href="#">Fresh Fruits&gt;</a>
+      <a href="#" class="papaya">${productName}</a>
+      <h3>${productName}</h3>
+      <h6>${quantity}</h6>
+
+      <i class="fa-solid fa-indian-rupee-sign price-text">55</i>
+      <i class="fa-solid fa-indian-rupee-sign price-text2 cut-text">69</i>
+      <p class="off">${offers}% Off</p>
+      <button>Add</button>
+      <hr>
+      <p>How it Works</p>
+
+      <div class="points">
+          <div class="box">
+              <img src="https://img.freepik.com/premium-vector/female-hand-holding-smartphone-cartoon-hand-scrolling-cell-phone-screen-mobile-device-hand-flat-vector-illustration-white-background_627510-1571.jpg?w=740"
+                  alt="mobile">
+          </div>
+          <div>
+              <h5>Open the app</h5>
+              <p>Choose from over 7000 products across groceries, fresh fruits &amp;<br> veggies, meat, pet care,
+                  beauty items &amp; more</p>
+          </div>
+
+
+      </div>
+      <div class="points">
+          <div class="box">
+              <img src="https://media.istockphoto.com/id/500805248/vector/vector-set-of-paper-bag.jpg?s=612x612&w=0&k=20&c=8hH2jpYtcvexsGZXJ5GLP464dtMtRarlYqkzSXNOtyk="
+                  alt="free-delivery">
+          </div>
+          <div>
+              <h5>Place an order</h5>
+              <p>Add your favourite items to the cart &amp; <br>avail the best offers</p>
+          </div>
+
+
+      </div>
+      <div class="points">
+          <div class="box">
+              <img src="https://i.pinimg.com/474x/28/1f/b2/281fb27c747c2cf1cc41819356978801.jpg" alt="mobile">
+          </div>
+          <div>
+              <h5>Get free delivery</h5>
+              <p>Experience lighting-fast speed &amp; get all your items delivered in <br>10 minutes</p>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<!--recommdation-of-products-->
+<div class="might-like">
+  <p>You might also like</p>
+  <div class="recommend">
+      <div class="recommend-card">
+          <h5 class="off">20% Off</h5>
+          <img src="https://cdn.zeptonow.com/production///tr:w-450,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/87ba5567-09fd-4e76-9a4e-0dc1d7fdd341.jpeg"
+              alt="Cauliflower">
+          <h6>Cauliflower</h6>
+          <p>1 pc (Approx. 400g - 600g)</p>
+          <div>
+              <i class="fa-solid fa-indian-rupee-sign price">28</i>
+              <i class="fa-solid fa-indian-rupee-sign price-cut">22</i>
+              <button>Add</button>
+          </div>
+      </div>
+
+      <div class="recommend-card">
+          <h5 class="off">20% Off</h5>
+          <img src="https://cdn.zeptonow.com/production///tr:w-450,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/c815da73-f67b-4066-aac6-7566cf8931c9.jpeg"
+              alt="Cauliflower">
+          <h6>Tomato Local</h6>
+          <p>1 kg</p>
+          <div>
+              <i class="fa-solid fa-indian-rupee-sign price">43</i>
+              <i class="fa-solid fa-indian-rupee-sign price-cut">54</i>
+              <button>Add</button>
+          </div>
+      </div>
+
+      <div class="recommend-card">
+          <h5 class="off">20% Off</h5>
+          <img src="https://cdn.zeptonow.com/production///tr:w-450,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/32bf997e-e3cb-4513-bb98-3d3f1a672889.jpeg"
+              alt="Cauliflower">
+          <h6>Strawberry</h6>
+          <p>1 pc (Approx. 180g - 200g)</p>
+          <div>
+              <i class="fa-solid fa-indian-rupee-sign price">87</i>
+              <i class="fa-solid fa-indian-rupee-sign price-cut">110</i>
+              <button>Add</button>
+          </div>
+      </div>
+
+      <div class="recommend-card">
+          <h5 class="off">20% Off</h5>
+          <img src="https://cdn.zeptonow.com/production///tr:w-450,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/322275eb-48f6-4b66-9adf-48b3d38bede3.jpeg"
+              alt="Cauliflower">
+          <h6>Coriander Leaves</h6>
+          <p>250 g</p>
+          <div>
+              <i class="fa-solid fa-indian-rupee-sign price">31</i>
+              <i class="fa-solid fa-indian-rupee-sign price-cut">25</i>
+              <button>Add</button>
+          </div>
+      </div>
+
+      <div class="recommend-card">
+          <h5 class="off">20% Off</h5>
+          <img src="https://cdn.zeptonow.com/production///tr:w-450,ar-3000-3000,pr-true,f-auto,q-80/cms/product_variant/af60456d-38af-4c52-adb1-09f20a941914.jpeg"
+              alt="Cauliflower">
+          <h6>Tender Coconut</h6>
+          <p>1 pc (Min. 250 ml water)</p>
+          <div>
+              <i class="fa-solid fa-indian-rupee-sign price">61</i>
+              <i class="fa-solid fa-indian-rupee-sign price-cut">54</i>
+              <button>Add</button>
+          </div>
+      </div>
+
+      
+    
+
+
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+`
+let body = document.querySelector("#mainBody");
+
+console.log(body);
+
+body.innerHTML = ""
+
+body.innerHTML = Detailpage
+
+}
