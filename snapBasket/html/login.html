@@ -40,10 +40,10 @@
               <a class="menu-link" href="../index.html">Home</a>
             </li>
             <li id="about" class="menu-item">
-              <a class="menu-link" href="./html/login.html">About</a>
+              <a class="menu-link" href="#">About</a>
             </li>
             <li class="menu-item" id="openModal">
-              <a class="menu-link" href="#"
+              <a class="menu-link" id="loginProfile" href="#"
                 >Login <i class="fa-solid fa-user"></i
               ></a>
             </li>
@@ -80,35 +80,39 @@
             <aside class="accountLayoutAside">
               <div class="accountLeft">
                 <div class="accountLeftPartDetails">
-                  <div class="detail">
+                  <div style="cursor: pointer" class="detail">
                     <h3 class="h3">My Account</h3>
                     <h4 class="h4"></h4>
                   </div>
                   <div class="divider"></div>
                 </div>
                 <div
-                  style="align-items: center"
+                  style="align-items: center; cursor: pointer"
                   class="accountLeftPart"
                   id="orders"
                 >
                   <span class="material-symbols-outlined"> shopping_bag </span>
                   Orders
                 </div>
-                <div class="accountLeftPart" id="customer">
+                <div
+                  style="cursor: pointer"
+                  class="accountLeftPart"
+                  id="customer"
+                >
                   <span class="material-symbols-outlined"> support_agent </span>
                   Customer Support
                 </div>
-                <div class="accountLeftPart">
+                <div style="cursor: pointer" class="accountLeftPart">
                   <span class="material-symbols-outlined"> home_pin </span>
                   Addresses
                 </div>
-                <div class="accountLeftPart">
+                <div style="cursor: pointer" class="accountLeftPart">
                   <span class="material-symbols-outlined">
                     account_circle
                   </span>
                   Profile
                 </div>
-                <div class="accountLeftPart">
+                <div style="cursor: pointer" class="accountLeftPart">
                   <span class="material-symbols-outlined">
                     account_balance_wallet
                   </span>
@@ -117,6 +121,7 @@
                 <div class="accountLeftPart_logout">
                   <div class="divider"></div>
                   <div
+                    style="cursor: pointer"
                     id="logoutCustomer"
                     class="accountLeftPart1 accountLeftPart"
                   >

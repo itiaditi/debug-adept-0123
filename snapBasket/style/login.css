@@ -496,4 +496,11 @@ div#supportInner p {
     border: 2px solid #54b227;
     outline: none;
   }
-  
+  #cart-count {
+    color: red;
+    font-size: 20px;
+    height: 7px;
+    position: relative;
+    top: -2px;
+    left: 8px;
+  }

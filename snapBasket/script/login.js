@@ -1,4 +1,11 @@
-
+let profile=document.getElementById("loginProfile");
+const isLoggedIn = localStorage.getItem("localAccessToken")!==null;
+const cartUrl = `https://debug-adept-0123.onrender.com/cart`;
+// Update the text if the user is logged in
+if (isLoggedIn) {
+ profile.innerText = "Profile";
+ updateCartCount();
+}
 // Open and Close Navbar Menu
 const navbarMenu = document.getElementById("menu");
 const burgerMenu = document.getElementById("burger");
@@ -117,3 +124,40 @@ function logout() {
     // Redirect to the login page or perform any other necessary actions
     window.location.href = '../index.html';
 }
+
+//cart count
+
+async function updateCartCount() {
+  try {
+    // Fetch the user's cart data
+    let response = await fetch(cartUrl);
+ 
+    if (!response.ok) {
+      throw new Error("Failed to fetch cart data");
+    }
+ 
+    // Parse the response JSON
+    let cartData = await response.json();
+ 
+    // Access the 'product' array for a specific unique ID and get its length
+    const uniqueId = localStorage.getItem("localAccessToken") // Replace with the desired unique ID
+    const cartItem = cartData.find(item => item.id === uniqueId);
+    const cartCount = cartItem ? cartItem.product.length : 0;
+ 
+    // Update the cart count on the UI
+    let cartCountElement = document.getElementById("cart-count");
+    
+    if (cartCountElement) {
+      cartCountElement.innerText = cartCount.toString();
+    } else {
+      console.error("Cart count element not found in the UI");
+    }
+ 
+    console.log("Cart count updated successfully:", cartCount);
+  } catch (error) {
+    console.error("Error updating cart count:", error);
+  }
+ }
+ 
+ // Call the function to update the cart count
+ updateCartCount();

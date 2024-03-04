@@ -133,43 +133,7 @@ async function fetchData(url, queryParamString="") {
       console.log(err);
     }
   }
-//   function createCard(obj){
-//     let tr = document.createElement("tr");
-//     tr.dataset.id = obj.id;
-//     let td1 = document.createElement("td");
-//     let td2 = document.createElement("td");
-//     let td3 = document.createElement("td");
-//     let td4 = document.createElement("td");
-//     let td5 = document.createElement("td");
-//     let  td6=document.createElement("td");
-//     let td7 = document.createElement("td");
-//     let img = document.createElement("img");
-//     img.src = obj.imageLink;
-//     td1.append(img);
 
-//     const deleteButton = document.createElement('button');
-//     deleteButton.classList.add('card-button');
-//     deleteButton.textContent = 'Delete';
-//     deleteButton.dataset.id = obj.id;
-//     deleteButton.addEventListener('click', ()=>{
-//       deleteArt(obj.id)
-//     });
-//     const updateBtn = document.createElement('button');
-//     deleteButton.classList.add('card-button');
-//     deleteButton.textContent = 'Delete';
-//     deleteButton.dataset.id = obj.id;
-//     deleteButton.addEventListener('click', ()=>{
-//       deleteArt(obj.id)
-//     });
-//     td6.append(deleteButton);
-//     td2.textContent=obj.productName;
-//     td3.textContent=obj.quantity;
-//     td4.textContent=obj.price;
-//     td5.textContent=obj.offers;
-//     tr.append(td1,td2,td3,td4,td5,td6);
-//     return tr;    
-
-//   }
 function createCard(obj) {
     let tr = document.createElement("tr");
     tr.dataset.id = obj.id;

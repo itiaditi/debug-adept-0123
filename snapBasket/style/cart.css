@@ -479,3 +479,11 @@ pre {
   align-items: center;
   font-size: 20px;
 }
+#cart-count {
+  color: red;
+  font-size: 20px;
+  height: 7px;
+  position: relative;
+  top: -2px;
+  left: 8px;
+}

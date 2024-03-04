@@ -1,3 +1,10 @@
+let profile=document.getElementById("loginProfile");
+const isLoggedIn = localStorage.getItem("localAccessToken")!==null;
+
+// Update the text if the user is logged in
+if (!isLoggedIn) {
+ profile.innerText = "Profile";
+}
 // navbar 
 //navbar
 const navbarMenu = document.getElementById("menu");

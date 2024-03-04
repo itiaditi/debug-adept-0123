@@ -3,140 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/index.css">
-    <link rel="icon" href="./media/snap (1).png">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="icon" href="./media/snap (1).png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
     <title>snapBasket</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <!-- navbar  -->
+    <header class="header1" id="header">
+      <nav class="navbar1 container1">
+        <img src="./media/snap .png" alt="logo" class="brand" />
+        <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </div>
+        <span class="overlay"></span>
+        <div class="menu" id="menu">
+          <ul class="menu-inner">
+            <li class="menu-item">
+              <a class="menu-link" href="./index.html">Home</a>
+            </li>
+            <li id="about" class="menu-item">
+              <a class="menu-link" href="#">About</a>
+            </li>
+            <li class="menu-item" id="openModal">
+              <a class="menu-link" id="loginProfile" href="#"
+                >Login <i class="fa-solid fa-user"></i
+              ></a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="#" id="cart"
+                >Cart <i class="fa-solid fa-cart-shopping"></i
+                ><sup id="cart-count">0</sup></a
+              >
+            </li>
+          </ul>
+        </div>
+        <span
+          ><i
+            class="bx bx-search search-toggle"
+            onkeypress="handleKeyPress(event)"
+          ></i
+        ></span>
+        <div class="search-block">
+          <form class="search-form">
+            <span><i class="bx bx-arrow-back search-cancel"></i></span>
+            <input
+              type="search"
+              name="search"
+              class="search-input"
+              placeholder="Search here..."
+            />
+          </form>
+        </div>
+      </nav>
+    </header>
 
+    <div id="mainBody">
+      <!-- Banner -->
 
-   <!-- navbar  -->
-      <header class="header1" id="header">
-        <nav class="navbar1 container1">
-           <img src="./media/snap .png" alt="logo" class="brand ">
-           <div class="burger" id="burger">
-              <span class="burger-line"></span>
-              <span class="burger-line"></span>
-              <span class="burger-line"></span>
-           </div>
-           <span class="overlay"></span>
-           <div class="menu" id="menu">
-              <ul class="menu-inner">
-                 <li class="menu-item"><a class="menu-link" href="./index.html">Home</a></li>
-                 <li id="about" class="menu-item"><a  class="menu-link" href="./html/login.html">About</a></li>
-                 <li class="menu-item" id="openModal"><a class="menu-link" href="#" >Login <i class="fa-solid fa-user"></i></a></li>
-                 <li class="menu-item"><a class="menu-link" href="#" id="cart">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
-              </ul>
-           </div>
-           <span><i class="bx bx-search search-toggle" onkeypress="handleKeyPress(event)"></i></span>
-           <div class="search-block">
-              <form class="search-form">
-                 <span><i class="bx bx-arrow-back search-cancel"></i></span>
-                 <input type="search" name="search" class="search-input" placeholder="Search here...">
-              </form>
-           </div>
-        </nav>
-     </header>
+      <div class="banner1">
+        <img src="./media/banner1.webp" alt="banner" />
+      </div>
 
+      <!-- big cards crosal image -->
+      <section>
+        <div id="cCarousel">
+          <div class="arrow" id="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <div class="arrow" id="next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
 
-<div id="mainBody">
+          <div id="carousel-vp">
+            <div id="cCarousel-inner">
+              <article class="cCarousel-item">
+                <img src="./media/mango.webp" />
+              </article>
 
-   <!-- Banner -->
+              <article class="cCarousel-item">
+                <img src="./media/nuts.webp" alt="Moon" />
+              </article>
+              <article class="cCarousel-item">
+                <img src="./media/vim.webp" alt="Moon" />
+              </article>
+              <article class="cCarousel-item">
+                <img src="./media/cream.webp" alt="Moon" />
+              </article>
+              <article class="cCarousel-item">
+                <img src="./media/shampoo.webp" alt="Moon" />
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-   <div class="banner1">
-      <img src="./media/banner1.webp" alt="banner">
-     </div>
+      <!-- product by category -->
+      <div class="category">
+        <a href="./html/product.html" style="grid-column: span 2"
+          ><img
+            src="./media/4529e4a6-53c8-47c0-9386-bf6da3bbc2d6.webp"
+            alt="categoryimg"
+            class="categoryImg"
+        /></a>
+        <img
+          src="./media/9ab5de50-8c4f-4491-8352-763a8337b59cAttaRiceOilDals.webp"
+          alt="categoryimg"
+          class="categoryImg"
+        />
+        <img src="./media/img3.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img4.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img5.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img6.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img7.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img8.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img9.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img10.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img11.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img12.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img13.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img14.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img15.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img16.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img17.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img18.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img19.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img20.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img21.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img22.webp" alt="categoryimg" class="categoryImg" />
+        <img src="./media/img23.webp" alt="categoryimg" class="categoryImg" />
+      </div>
 
+      <!-- card  containers -->
 
-<!-- big cards crosal image -->
-<section>
-   <div id="cCarousel">
-     <div class="arrow" id="prev"><i class="fa-solid fa-chevron-left"></i></div>
-     <div class="arrow" id="next"><i class="fa-solid fa-chevron-right"></i></div>
- 
-     <div id="carousel-vp">
-       <div id="cCarousel-inner">
- 
-         <article class="cCarousel-item">
-           <img src="./media/mango.webp"></img>
-         </article>
- 
-         <article class="cCarousel-item">
-           <img src="./media/nuts.webp" alt="Moon">
-         </article>
-  <article class="cCarousel-item">
-           <img src="./media/vim.webp" alt="Moon">
-         </article>
-  <article class="cCarousel-item">
-           <img src="./media/cream.webp" alt="Moon">
-         </article>
-  <article class="cCarousel-item">
-           <img src="./media/shampoo.webp" alt="Moon">
-  </article>
-       </div>
-     </div>
-   </div>
- </section>
+      <div class="cardsContainerWrapper" id="cardsContainerWrapper"></div>
+    </div>
 
-
-<!-- product by category -->
-<div class="category">
-   <a href="./html/product.html" style="grid-column: span 2;"><img src="./media/4529e4a6-53c8-47c0-9386-bf6da3bbc2d6.webp" alt="categoryimg" class="categoryImg"></a>
-   <img src="./media/9ab5de50-8c4f-4491-8352-763a8337b59cAttaRiceOilDals.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img3.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img4.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img5.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img6.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img7.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img8.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img9.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img10.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img11.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img12.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img13.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img14.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img15.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img16.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img17.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img18.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img19.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img20.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img21.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img22.webp" alt="categoryimg" class="categoryImg">
-   <img src="./media/img23.webp" alt="categoryimg" class="categoryImg">
-</div>
-
-     <!-- card  containers -->
-
-     <div class="cardsContainerWrapper" id="cardsContainerWrapper">
-     </div>
-
-
-
-
-
-
-</div>
-
-     <!-- login modal  -->
-     <div id="loginModal" class="modal1">
+    <!-- login modal  -->
+    <div id="loginModal" class="modal1">
       <div class="form-structor">
         <div class="signup">
           <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
           <div class="form-holder">
-            <input type="text" class="input" id="signUpName" placeholder="Name" />
+            <input
+              type="text"
+              class="input"
+              id="signUpName"
+              placeholder="Name"
+            />
             <input type="email" class="input" id="semail" placeholder="Email" />
-            <input type="password" class="input" id="spass" placeholder="Password" />
+            <input
+              type="password"
+              class="input"
+              id="spass"
+              placeholder="Password"
+            />
           </div>
           <button class="submit-btn" id="signUpBtn">Sign up</button>
         </div>
@@ -162,9 +207,10 @@
         </div>
       </div>
     </div>
-
-
-     <script src="https://kit.fontawesome.com/2b5ae2b1ae.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2b5ae2b1ae.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  </html>
-  <script src="./script/index.js"></script>
+</html>
+<script src="./script/index.js"></script>
