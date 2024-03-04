@@ -52,8 +52,9 @@ async function getData(cartEmail) {
   try {
     if (!cartEmail) {
       window.location.replace(
-        "http://127.0.0.1:5500/snapBasket/html/login.html" //login page url
+        "http://127.0.0.1:5500/debug-adept-0123/snapBasket/html/login.html" //login page url //ip
       );
+
     }
     let res = await fetch(`${cartUrl}/${cartEmail}`);
     let data = await res.json();
